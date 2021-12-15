@@ -166,11 +166,12 @@ class Accept extends Action implements Csrf
             $data = $originalNotification['resource']['order'];
             $order = $this->orderFactory->create()->load($data['id'], 'ext_order_id');
 
-            if(!$order->getId()) {
+            if (!$order->getId()) {
                 $resultPage->setHttpResponseCode(406);
+
                 return $resultPage->setJsonData(
                     $this->json->serialize([
-                        'error' => 400,
+                        'error'   => 400,
                         'message' => __('Can not find this order'),
                     ])
                 );
