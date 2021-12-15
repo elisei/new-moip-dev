@@ -19,9 +19,9 @@
             <span class="title"><?= $block->escapeHtml(__('Payment &amp; Shipping Method')) ?></span>
         </div>
         <div class="admin__page-section-content">
-        <?php if (!$_order->getIsVirtual()) : ?>
+        <?php if (!$_order->getIsVirtual()): ?>
         <div class="admin__page-section-item order-payment-method">
-        <?php else : ?>
+        <?php else: ?>
         <div class="admin__page-section-item order-payment-method order-payment-method-virtual">
         <?php endif; ?>
 
@@ -41,7 +41,7 @@
         </div>
 
 
-        <?php if (!$_order->getIsVirtual()) : ?>
+        <?php if (!$_order->getIsVirtual()): ?>
         <div class="admin__page-section-item order-shipping-address">
             <?php /* Shipping Address */ ?>
             <div class="admin__page-section-item-title">
@@ -52,15 +52,15 @@
                 <div class="shipping-description-content">
                     <?= $block->escapeHtml(__('Total Shipping Charges')) ?>:
 
-                    <?php if ($this->helper(\Magento\Tax\Helper\Data::class)->displaySalesPriceInclTax($block->getSource()->getStoreId())) : ?>
+                    <?php if ($this->helper(\Magento\Tax\Helper\Data::class)->displaySalesPriceInclTax($block->getSource()->getStoreId())): ?>
                         <?php $_excl = $block->displayShippingPriceInclTax($_order); ?>
-                    <?php else : ?>
+                    <?php else: ?>
                         <?php $_excl = $block->displayPriceAttribute('shipping_amount', false, ' '); ?>
                     <?php endif; ?>
                     <?php $_incl = $block->displayShippingPriceInclTax($_order); ?>
 
                     <?= /* @noEscape */ $_excl ?>
-                    <?php if ($this->helper(\Magento\Tax\Helper\Data::class)->displaySalesBothPrices($block->getSource()->getStoreId()) && $_incl != $_excl) : ?>
+                    <?php if ($this->helper(\Magento\Tax\Helper\Data::class)->displaySalesBothPrices($block->getSource()->getStoreId()) && $_incl != $_excl): ?>
                         (<?= $block->escapeHtml(__('Incl. Tax')) ?> <?= /* @noEscape */ $_incl ?>)
                     <?php endif; ?>
                 </div>
