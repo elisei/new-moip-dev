@@ -20,22 +20,22 @@ class DataAssignBoletoObserver extends AbstractDataAssignObserver
     /**
      * @const string
      */
-    const METHOD_NAME = 'method_name';
+    public const METHOD_NAME = 'method_name';
 
     /**
      * @const string
      */
-    const METHOD_NAME_TYPE = 'Boleto Bancário';
+    public const METHOD_NAME_TYPE = 'Boleto Bancário';
 
     /**
      * @const string
      */
-    const PAYER_FULLNAME = 'boleto_payer_fullname';
+    public const PAYER_FULLNAME = 'boleto_payer_fullname';
 
     /**
      * @const string
      */
-    const PAYER_TAX_DOCUMENT = 'boleto_payer_tax_document';
+    public const PAYER_TAX_DOCUMENT = 'boleto_payer_tax_document';
 
     /**
      * @var array
@@ -46,6 +46,8 @@ class DataAssignBoletoObserver extends AbstractDataAssignObserver
     ];
 
     /**
+     * Execute.
+     *
      * @param Observer $observer
      *
      * @return void

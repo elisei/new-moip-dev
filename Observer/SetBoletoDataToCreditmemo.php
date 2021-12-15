@@ -8,6 +8,7 @@
 
 namespace Moip\Magento2\Observer;
 
+use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Moip\Magento2\Block\Adminhtml\Sales\Creditmemo as CreditmemoBlock;
 use Moip\Magento2\Model\Ui\ConfigProviderBoleto;
@@ -24,7 +25,7 @@ class SetBoletoDataToCreditmemo implements ObserverInterface
      *
      * @return $this
      */
-    public function execute(\Magento\Framework\Event\Observer $observer)
+    public function execute(Observer $observer)
     {
         $input = $observer->getEvent()->getInput();
         /** @var \Magento\Sales\Model\Order\Creditmemo $creditmemo */
@@ -34,26 +35,27 @@ class SetBoletoDataToCreditmemo implements ObserverInterface
         if ($order->getPayment()->getMethodInstance()->getCode() === ConfigProviderBoleto::CODE) {
             $bankNumber = !empty($input[CreditmemoBlock::BANK_NUMBER]) ? $input[CreditmemoBlock::BANK_NUMBER] : null;
             $creditmemo->setData(CreditmemoBlock::BANK_NUMBER, $bankNumber);
-
+            // phpcs:ignore
             $agencyNumber = !empty($input[CreditmemoBlock::AGENCY_NUMBER]) ? $input[CreditmemoBlock::AGENCY_NUMBER] : null;
             $creditmemo->setData(CreditmemoBlock::AGENCY_NUMBER, $agencyNumber);
-
+            // phpcs:ignore
             $agencyCheckNumber = !empty($input[CreditmemoBlock::AGENCY_CHECK_NUMBER]) ? $input[CreditmemoBlock::AGENCY_CHECK_NUMBER] : null;
             $creditmemo->setData(CreditmemoBlock::AGENCY_CHECK_NUMBER, $agencyCheckNumber);
-
+            // phpcs:ignore
             $accountNumber = !empty($input[CreditmemoBlock::ACCOUNT_NUMBER]) ? $input[CreditmemoBlock::ACCOUNT_NUMBER] : null;
             $creditmemo->setData(CreditmemoBlock::ACCOUNT_NUMBER, $accountNumber);
-
+            // phpcs:ignore
             $accountCheckNumber = !empty($input[CreditmemoBlock::ACCOUNT_CHECK_NUMBER]) ? $input[CreditmemoBlock::ACCOUNT_CHECK_NUMBER] : null;
             $creditmemo->setData(CreditmemoBlock::ACCOUNT_CHECK_NUMBER, $accountCheckNumber);
-
+            // phpcs:ignore
             $holderFullname = !empty($input[CreditmemoBlock::HOLDER_FULLNAME]) ? $input[CreditmemoBlock::HOLDER_FULLNAME] : null;
             $creditmemo->setData(CreditmemoBlock::HOLDER_FULLNAME, $holderFullname);
-
+            // phpcs:ignore
             $holderDocumment = !empty($input[CreditmemoBlock::HOLDER_DOCUMENT_NUMBER]) ? $input[CreditmemoBlock::HOLDER_DOCUMENT_NUMBER] : null;
             $creditmemo->setData(CreditmemoBlock::HOLDER_DOCUMENT_NUMBER, $holderDocumment);
-
+            // phpcs:ignore
             $comment = !empty($input[CreditmemoBlock::CREDITMEMO_COMMENT_TEXT]) ? $input[CreditmemoBlock::CREDITMEMO_COMMENT_TEXT] : null;
+            // phpcs:ignore
             $comment = $comment.'\n'.__('Refund Request to Bank %1, Agency Number %2, Agency Check Number %3, Account Number %4, Account Check Number %5, Holder Name %6, Holder Tax Document %7', $bankNumber, $agencyNumber, $agencyCheckNumber, $accountNumber, $accountCheckNumber, $holderFullname, $holderDocumment);
             $creditmemo->setComment($comment);
         }

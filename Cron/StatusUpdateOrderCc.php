@@ -29,20 +29,20 @@ class StatusUpdateOrderCc
     protected $order;
 
     /**
-     * @var collectionFactory
-     */
-    protected $collectionFactory;
-
-    /**
      * @var ConfigCc
      */
     protected $configCc;
 
-    /*
-     * @param order
-     * @param logger
-     * @param ConfigCc
-     * @param collectionFactory
+    /**
+     * @var CollectionFactory
+     */
+    protected $collectionFactory;
+
+    /**
+     * @param Order             $order
+     * @param Logger            $logger
+     * @param ConfigCc          $configCc
+     * @param CollectionFactory $collectionFactory
      */
     public function __construct(
         Order $order,
@@ -56,6 +56,11 @@ class StatusUpdateOrderCc
         $this->collectionFactory = $collectionFactory;
     }
 
+    /**
+     * Execute.
+     *
+     * @return void
+     */
     public function execute()
     {
         $orders = $this->collectionFactory->create()

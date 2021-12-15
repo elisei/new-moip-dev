@@ -20,32 +20,32 @@ class DataAssignCheckoutObserver extends AbstractDataAssignObserver
     /**
      * @const string
      */
-    const METHOD_NAME = 'method_name';
+    public const METHOD_NAME = 'method_name';
 
     /**
      * @const string
      */
-    const METHOD_NAME_TYPE = 'Moip Checkout';
+    public const METHOD_NAME_TYPE = 'Moip Checkout';
 
     /**
      * @const string
      */
-    const ENABLE_INSTALLMENTS = 'checkout_enable_installments';
+    public const ENABLE_INSTALLMENTS = 'checkout_enable_installments';
 
     /**
      * @const string
      */
-    const QTY_INSTALLMENTS = 'checkout_qty_installments';
+    public const QTY_INSTALLMENTS = 'checkout_qty_installments';
 
     /**
      * @const string
      */
-    const PAYER_FULLNAME = 'checkout_payer_fullname';
+    public const PAYER_FULLNAME = 'checkout_payer_fullname';
 
     /**
      * @const string
      */
-    const PAYER_TAX_DOCUMENT = 'checkout_payer_tax_document';
+    public const PAYER_TAX_DOCUMENT = 'checkout_payer_tax_document';
 
     /**
      * @var array
@@ -58,6 +58,8 @@ class DataAssignCheckoutObserver extends AbstractDataAssignObserver
     ];
 
     /**
+     * Execute.
+     *
      * @param Observer $observer
      *
      * @return void

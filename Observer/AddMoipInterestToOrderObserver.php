@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace Moip\Magento2\Observer;
 
+use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Moip\Magento2\Api\Data\MoipInterestInterface;
 
@@ -19,9 +20,13 @@ use Moip\Magento2\Api\Data\MoipInterestInterface;
 class AddMoipInterestToOrderObserver implements ObserverInterface
 {
     /**
+     * Execute.
+     *
      * @param Observer $observer
+     *
+     * @return void
      */
-    public function execute(\Magento\Framework\Event\Observer $observer)
+    public function execute(Observer $observer)
     {
         /* @var \Magento\Sales\Model\Order $order */
         $order = $observer->getEvent()->getData('order');
