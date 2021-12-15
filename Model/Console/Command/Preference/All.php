@@ -26,39 +26,29 @@ use Psr\Log\LoggerInterface;
 class All extends AbstractModel
 {
     /**
-     * State.
-     *
      * @var State
      */
     private $state;
 
     /**
-     * ScopeConfigInterface.
-     *
      * @var ScopeConfigInterface
      */
     protected $scopeConfig;
 
     /**
-     * MoipConfig.
-     *
      * @var MoipConfig
      */
     private $moipConfig;
 
     /**
-     * ZendClientFactory.
-     *
-     * @var ZendClientFactory
-     */
-    private $httpClientFactory;
-
-    /**
-     * Json.
-     *
      * @var Json
      */
     private $json;
+
+    /**
+     * @var ZendClientFactory
+     */
+    private $httpClientFactory;
 
     /**
      * All constructor.
@@ -89,7 +79,9 @@ class All extends AbstractModel
     }
 
     /**
-     * {@inheritdoc}
+     * Command All
+     *
+     * @return void
      */
     public function all()
     {
@@ -103,6 +95,7 @@ class All extends AbstractModel
 
         foreach ($preference['preference'] as $webhooks) {
             if (isset($webhooks['id'])) {
+                // phpcs:ignore
                 $this->writeln(__('<info>Preference ID: %1 Target Uri: %2</info>', $webhooks['id'], $webhooks['target']));
             }
         }
@@ -111,8 +104,8 @@ class All extends AbstractModel
         return $this;
     }
 
-    /*
-     * List All Preference Webhooks
+    /**
+     * List All Preference Webhooks.
      *
      * @return array
      */

@@ -26,36 +26,26 @@ use Psr\Log\LoggerInterface;
 class Delete extends AbstractModel
 {
     /**
-     * State.
-     *
      * @var State
      */
     private $state;
 
     /**
-     * ScopeConfigInterface.
-     *
      * @var ScopeConfigInterface
      */
     protected $scopeConfig;
 
     /**
-     * MoipConfig.
-     *
      * @var MoipConfig
      */
     private $moipConfig;
 
     /**
-     * ZendClientFactory.
-     *
      * @var ZendClientFactory
      */
     private $httpClientFactory;
 
     /**
-     * Json.
-     *
      * @var Json
      */
     private $json;
@@ -88,9 +78,13 @@ class Delete extends AbstractModel
         $this->httpClientFactory = $httpClientFactory;
     }
 
-    /**
-     * {@inheritdoc}
-     */
+   /**
+    * Command Delete
+    *
+    * @param array $ids
+    *
+    * @return void
+    */
     public function delete($ids = [])
     {
         $this->writeln('Delete Preference');
@@ -108,8 +102,10 @@ class Delete extends AbstractModel
         return $this;
     }
 
-    /*
+    /**
      * Delete Preference Webhooks
+     *
+     * @param string $id
      *
      * @return array
      */

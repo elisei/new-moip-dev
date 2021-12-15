@@ -28,62 +28,47 @@ use Psr\Log\LoggerInterface;
 class Create extends AbstractModel
 {
     /**
-     * State.
-     *
      * @var State
      */
     private $state;
 
     /**
-     * ScopeConfigInterface.
-     *
      * @var ScopeConfigInterface
      */
     protected $scopeConfig;
 
     /**
-     * Config.
-     *
      * @var Config
      */
     private $config;
 
     /**
-     * MoipConfig.
-     *
      * @var MoipConfig
      */
     private $moipConfig;
 
     /**
-     * Validator.
-     *
      * @var Validator
      */
     private $validator;
 
     /**
-     * ZendClientFactory.
-     *
      * @var ZendClientFactory
      */
     private $httpClientFactory;
 
     /**
-     * Json.
-     *
      * @var Json
      */
     private $json;
 
     /**
-     * Create constructor.
-     *
      * @param LoggerInterface      $logger
      * @param ScopeConfigInterface $scopeConfig
      * @param State                $state
      * @param MoipConfig           $moipConfig
      * @param Config               $config
+     * @param Validator            $validator
      * @param Json                 $json
      * @param ZendClientFactory    $httpClientFactory
      */
@@ -109,6 +94,13 @@ class Create extends AbstractModel
         $this->httpClientFactory = $httpClientFactory;
     }
 
+    /**
+     * Command Preference.
+     *
+     * @param string $baseUrl
+     *
+     * @return void
+     */
     public function preference(string $baseUrl)
     {
         $this->writeln('Init Set Preference');
@@ -131,10 +123,10 @@ class Create extends AbstractModel
     /**
      * Create Preference.
      *
-     * @param $baseUrl
-     * @param $type
+     * @param string $baseUrl
+     * @param string $type
      *
-     * @return array
+     * @return void
      */
     private function createPreference(string $baseUrl, string $type)
     {
@@ -144,13 +136,16 @@ class Create extends AbstractModel
         if ($create['success']) {
             $preference = $create['preference'];
             if (isset($preference['id'])) {
+                // phpcs:ignore
                 $this->writeln(__('<info>Your preference for method %1 has been successfully created: %2</info>', $type, $preference['id']));
                 $registryConfig = $this->setConfigPreferenceInfo($preference, $type);
 
                 if (!$registryConfig) {
+                    // phpcs:ignore
                     $this->writeln(__('<error>Error saving information in database: %1</error>', $registryConfig['error']));
                 }
             } elseif (isset($preference['code'])) {
+                // phpcs:ignore
                 $this->writeln(__('<error>Error creating preference %1: %2</error>', $type, $preference['description']));
             }
         } else {
@@ -163,8 +158,8 @@ class Create extends AbstractModel
     /**
      * Set Config Preference Info.
      *
-     * @param $baseUrl
-     * @param $type
+     * @param array  $data
+     * @param string $type
      *
      * @return array
      */
@@ -207,9 +202,11 @@ class Create extends AbstractModel
     /**
      * Create Url For Accept.
      *
+     * @param string $baseUrl
+     *
      * @return string
      */
-    private function createUrlForAccept($baseUrl): string
+    private function createUrlForAccept(string $baseUrl): string
     {
         return $baseUrl.'moip/webhooks/accept';
     }
@@ -217,9 +214,11 @@ class Create extends AbstractModel
     /**
      * Create Url For Deny.
      *
+     * @param string $baseUrl
+     *
      * @return string
      */
-    private function createUrlForDeny($baseUrl): string
+    private function createUrlForDeny(string $baseUrl): string
     {
         return $baseUrl.'moip/webhooks/deny';
     }
@@ -227,9 +226,11 @@ class Create extends AbstractModel
     /**
      * Create Url For Refund.
      *
+     * @param string $baseUrl
+     *
      * @return string
      */
-    private function createUrlForRefund($baseUrl): string
+    private function createUrlForRefund(string $baseUrl): string
     {
         return $baseUrl.'moip/webhooks/refund';
     }
@@ -237,8 +238,8 @@ class Create extends AbstractModel
     /**
      * Create Webhook Data.
      *
-     * @param $baseUrl
-     * @param $type
+     * @param string $baseUrl
+     * @param string $type
      *
      * @return array
      */
@@ -264,13 +265,14 @@ class Create extends AbstractModel
         return $webhook;
     }
 
-    /*
-     * Set Webhooks
+    /**
+     * Set Webhooks.
      *
-     * @param $webhook
+     * @param array $data
+     *
      * @return array
      */
-    private function sendPreference($data): array
+    private function sendPreference(array $data): array
     {
         $uri = $this->moipConfig->getApiUrl();
         $apiBearer = $this->moipConfig->getMerchantGatewayOauth();

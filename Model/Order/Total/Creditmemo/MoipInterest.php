@@ -19,6 +19,8 @@ use Magento\Sales\Model\Order\Creditmemo\Total\AbstractTotal;
 class MoipInterest extends AbstractTotal
 {
     /**
+     * Collect Data.
+     *
      * @param Creditmemo $creditmemo
      *
      * @return $this
