@@ -179,4 +179,74 @@ class Creditmemo extends \Magento\Backend\Block\Template
     {
         return $this->getCreditmemo()->getData(self::ACCOUNT_CHECK_NUMBER);
     }
+
+    /**
+     * Get Name Input for Bank Number.
+     *
+     * @return string
+     */
+    public function getNameInputBankNumber()
+    {
+        return self::BANK_NUMBER;
+    }
+
+    /**
+     * Get Name Input for Agency Number.
+     *
+     * @return string
+     */
+    public function getNameInputAgencyNumber()
+    {
+        return self::AGENCY_NUMBER;
+    }
+
+    /**
+     * Get Name Input for Agency Check.
+     *
+     * @return string
+     */
+    public function getNameInputAgencyCheck()
+    {
+        return self::AGENCY_CHECK_NUMBER;
+    }
+
+    /**
+     * Get Name Input for Account Number.
+     *
+     * @return string
+     */
+    public function getNameInputAccountNumber()
+    {
+        return self::ACCOUNT_NUMBER;
+    }
+
+    /**
+     * Get Name Input for Account Check.
+     *
+     * @return string
+     */
+    public function getNameInputAccountCheck()
+    {
+        return self::ACCOUNT_CHECK_NUMBER;
+    }
+
+    /**
+     * Get Name Input for Holder Name.
+     *
+     * @return string
+     */
+    public function getNameInputHolderName()
+    {
+        return self::HOLDER_FULLNAME;
+    }
+    
+    /**
+     * Get Name Input for Holder Document.
+     *
+     * @return string
+     */
+    public function getNameInputHolderDocument()
+    {
+        return self::HOLDER_DOCUMENT_NUMBER;
+    }
 }
