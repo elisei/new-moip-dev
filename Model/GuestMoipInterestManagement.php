@@ -33,7 +33,6 @@ class GuestMoipInterestManagement implements GuestMoipInterestManagementInterfac
     /**
      * @param \Magento\Quote\Model\QuoteIdMaskFactory            $quoteIdMaskFactory
      * @param \Moip\Magento2\Api\MoipInterestManagementInterface $moipInterestInterface
-     * @codeCoverageIgnore
      */
     public function __construct(
         QuoteIdMaskFactory $quoteIdMaskFactory,
@@ -44,7 +43,12 @@ class GuestMoipInterestManagement implements GuestMoipInterestManagementInterfac
     }
 
     /**
-     * {@inheritDoc}
+     * Save Moip Interest.
+     *
+     * @param int                   $cartId
+     * @param MoipInterestInterface $moipInterest
+     *
+     * @return void
      */
     public function saveMoipInterest(
         $cartId,

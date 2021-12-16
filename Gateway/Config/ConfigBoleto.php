@@ -20,74 +20,54 @@ use Magento\Store\Model\ScopeInterface;
 class ConfigBoleto extends PaymentConfig
 {
     /**
-     * Method code - Boleto.
-     *
      * @const string
      */
-    const METHOD = 'moip_magento2_boleto';
+    public const METHOD = 'moip_magento2_boleto';
 
     /**
-     * Active - Boleto.
-     *
-     * @const boolean
-     */
-    const ACTIVE = 'active';
-
-    /**
-     * Title - Boleto.
-     *
      * @const string
      */
-    const TITLE = 'title';
+    public const ACTIVE = 'active';
 
     /**
-     * Instruction in Checkout - Boleto.
-     *
      * @const string
      */
-    const INSTRUCTION_CHECKOUT = 'instruction_checkout';
+    public const TITLE = 'title';
 
     /**
-     * Expiration - Boleto.
-     *
-     * @const int
-     */
-    const EXPIRATION = 'expiration';
-
-    /**
-     * Printing instruction - Line 1 - Boleto.
-     *
      * @const string
      */
-    const INSTRUCTION_LINE_FIRST = 'instruction_lines_first';
+    public const INSTRUCTION_CHECKOUT = 'instruction_checkout';
 
     /**
-     * Printing instruction - Line 2 - Boleto.
-     *
      * @const string
      */
-    const INSTRUCTION_LINE_SECOND = 'instruction_lines_second';
+    public const EXPIRATION = 'expiration';
 
     /**
-     * Printing instruction - Line 3 - Boleto.
-     *
      * @const string
      */
-    const INSTRUCTION_LINE_THIRD = 'instruction_lines_third';
+    public const INSTRUCTION_LINE_FIRST = 'instruction_lines_first';
 
     /**
-     * Use tax document capture - Boleto.
-     *
-     * @const boolean
+     * @const string
      */
-    const USE_GET_TAX_DOCUMENT = 'get_tax_document';
+    public const INSTRUCTION_LINE_SECOND = 'instruction_lines_second';
 
     /**
-     * Use name capture - Boleto.
-     *
-     * @const boolean
+     * @const string
      */
-    const USE_GET_NAME = 'get_name';
+    public const INSTRUCTION_LINE_THIRD = 'instruction_lines_third';
+
+    /**
+     * @const string
+     */
+    public const USE_GET_TAX_DOCUMENT = 'get_tax_document';
+
+    /**
+     * @const string
+     */
+    public const USE_GET_NAME = 'get_name';
 
     /**
      * @var ScopeConfigInterface
@@ -101,6 +81,8 @@ class ConfigBoleto extends PaymentConfig
 
     /**
      * @param ScopeConfigInterface $scopeConfig
+     * @param DateTime             $date
+     * @param string|null          $methodCode
      */
     public function __construct(
         ScopeConfigInterface $scopeConfig,
@@ -114,6 +96,8 @@ class ConfigBoleto extends PaymentConfig
 
     /**
      * Get Payment configuration status.
+     *
+     * @param int|null $storeId
      *
      * @return bool
      */
@@ -131,6 +115,8 @@ class ConfigBoleto extends PaymentConfig
     /**
      * Get title of payment.
      *
+     * @param int|null $storeId
+     *
      * @return string|null
      */
     public function getTitle($storeId = null): ?string
@@ -147,6 +133,8 @@ class ConfigBoleto extends PaymentConfig
     /**
      * Get Instruction - Checkoout.
      *
+     * @param int|null $storeId
+     *
      * @return string|null
      */
     public function getInstructionCheckout($storeId = null): ?string
@@ -162,6 +150,8 @@ class ConfigBoleto extends PaymentConfig
 
     /**
      * Get Expiration.
+     *
+     * @param int|null $storeId
      *
      * @return string
      */
@@ -180,6 +170,8 @@ class ConfigBoleto extends PaymentConfig
     /**
      * Get Expiration Formart.
      *
+     * @param int|null $storeId
+     *
      * @return string
      */
     public function getExpirationFormat($storeId = null): ?string
@@ -197,6 +189,8 @@ class ConfigBoleto extends PaymentConfig
     /**
      * Get Instruction Line First - For Boleto.
      *
+     * @param int|null $storeId
+     *
      * @return string|null
      */
     public function getInstructionLineFirst($storeId = null): ?string
@@ -212,6 +206,8 @@ class ConfigBoleto extends PaymentConfig
 
     /**
      * Get Instruction Line Second - For Boleto.
+     *
+     * @param int|null $storeId
      *
      * @return string|null
      */
@@ -229,6 +225,8 @@ class ConfigBoleto extends PaymentConfig
     /**
      * Get Instruction Line Third - For Boleto.
      *
+     * @param int|null $storeId
+     *
      * @return string|null
      */
     public function getInstructionLineThird($storeId = null): ?string
@@ -245,6 +243,8 @@ class ConfigBoleto extends PaymentConfig
     /**
      * Get if you use document capture on the form.
      *
+     * @param int|null $storeId
+     *
      * @return bool
      */
     public function getUseTaxDocumentCapture($storeId = null): ?bool
@@ -260,6 +260,8 @@ class ConfigBoleto extends PaymentConfig
 
     /**
      * Get if you use name capture on the form.
+     *
+     * @param int|null $storeId
      *
      * @return bool
      */

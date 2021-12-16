@@ -57,13 +57,14 @@ class FormCc extends Cc
     private $priceHelper;
 
     /**
-     * @param Context    $context
-     * @param Config     $paymentConfig
-     * @param Quote      $session
-     * @param ConfigCc   $configCc
-     * @param configBase $configBase
-     * @param Data       $paymentDataHelper
-     * @param array      $data
+     * @param Context     $context
+     * @param Config      $paymentConfig
+     * @param Quote       $session
+     * @param ConfigCc    $configCc
+     * @param configBase  $configBase
+     * @param Data        $paymentDataHelper
+     * @param PriceHelper $priceHelper
+     * @param array       $data
      */
     public function __construct(
         Context $context,
@@ -85,8 +86,6 @@ class FormCc extends Cc
 
     /**
      * Title - Cc.
-     *
-     * @var string
      *
      * @return string
      */
@@ -183,7 +182,7 @@ class FormCc extends Cc
     /**
      * Installments - Cc.
      *
-     * @param $amount
+     * @param float $amount
      *
      * @return array
      */
@@ -210,9 +209,9 @@ class FormCc extends Cc
     /**
      * Interest Simple - Cc.
      *
-     * @param total
-     * @param $interest
-     * @param $portion
+     * @param float $total
+     * @param float $interest
+     * @param int   $portion
      *
      * @return float
      */
@@ -231,9 +230,9 @@ class FormCc extends Cc
     /**
      * Interest Compound - Cc.
      *
-     * @param total
-     * @param $interest
-     * @param $portion
+     * @param float $total
+     * @param float $interest
+     * @param int   $portion
      *
      * @return float
      */

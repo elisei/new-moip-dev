@@ -15,7 +15,7 @@ $ccInstallment = $block->getInfoData('checkout_qty_installments');
 <fieldset class="admin__fieldset payment-method" id="payment_form_<?= $block->escapeHtml($block->getMethodCode()) ?>" >
     <?php if ($block->getTaxDocumentCapture()): ?>
         <div class="field-text required admin__field _required">
-            <label class="admin__field-label" for="<?= /* @noEscape */ $code ?>_payer_tax_document">
+            <label class="admin__field-label" for="<?= /* @noEscape */ $block->escapeHtml($code) ?>_payer_tax_document">
                 <span><?= $block->escapeHtml(__('Holder Tax Document')) ?></span>
             </label>
             <div class="admin__field-control">
@@ -47,13 +47,14 @@ $ccInstallment = $block->getInfoData('checkout_qty_installments');
                 <span><?= $block->escapeHtml(__('Allows Installment')) ?></span>
             </label>
             <div class="admin__field-control">
-                <select id="<?= /* @noEscape */ $code ?>_enable_installments" name="payment[checkout_enable_installments]"
+                <?php // phpcs:ignore ?>
+                <select id="<?= /* @noEscape */ $block->escapeHtml($code) ?>_enable_installments" name="payment[checkout_enable_installments]"
                         class="admin__control-select required-entry">
                     <option value="0">
-                            <?= __('No') ?>
+                            <?= $block->escapeHtml(__('No')) ?>
                     </option>
                     <option value="1" selected="selected">
-                            <?= __('Yes') ?>
+                            <?= $block->escapeHtml(__('Yes')) ?>
                     </option>
                 </select>
             </div>

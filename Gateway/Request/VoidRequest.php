@@ -33,7 +33,9 @@ class VoidRequest implements BuilderInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Build.
+     *
+     * @param array $buildSubject
      */
     public function build(array $buildSubject)
     {

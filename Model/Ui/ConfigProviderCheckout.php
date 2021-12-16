@@ -23,7 +23,7 @@ class ConfigProviderCheckout implements ConfigProviderInterface
     /*
      * @const string
      */
-    const CODE = 'moip_magento2_checkout';
+    public const CODE = 'moip_magento2_checkout';
 
     /**
      * @var Config

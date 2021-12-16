@@ -22,7 +22,7 @@ class CreateWebhook extends Command
     /**
      * @const string
      */
-    const WEBHOOK_LINK = 'link';
+    public const WEBHOOK_LINK = 'link';
 
     /**
      * @var Create
@@ -50,7 +50,10 @@ class CreateWebhook extends Command
     }
 
     /**
-     * {@inheritdoc}
+     * Execute.
+     *
+     * @param InputInterface  $input
+     * @param OutputInterface $output
      */
     protected function execute(
         InputInterface $input,
@@ -64,7 +67,9 @@ class CreateWebhook extends Command
     }
 
     /**
-     * {@inheritdoc}
+     * Configure.
+     *
+     * @return void
      */
     protected function configure()
     {

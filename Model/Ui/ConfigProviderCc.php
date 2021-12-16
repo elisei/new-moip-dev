@@ -23,12 +23,12 @@ class ConfigProviderCc implements ConfigProviderInterface
     /*
      * @const string
      */
-    const CODE = 'moip_magento2_cc';
+    public const CODE = 'moip_magento2_cc';
 
     /*
      * @var VAULT CODE
      */
-    const VAULT_CODE = 'moip_magento2_cc_vault';
+    public const VAULT_CODE = 'moip_magento2_cc_vault';
 
     /**
      * @var Config Base

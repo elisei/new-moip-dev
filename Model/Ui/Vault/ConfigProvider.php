@@ -19,7 +19,8 @@ use Moip\Magento2\Gateway\Config\ConfigCcVault;
 
 class ConfigProvider implements ConfigProviderInterface
 {
-    const CODE = 'moip_magento2_cc_vault';
+    public const CODE = 'moip_magento2_cc_vault';
+
     /**
      * @var Config
      */

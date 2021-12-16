@@ -16,9 +16,11 @@ use Magento\Payment\Model\Method\AbstractMethod;
 class PaymentAction implements \Magento\Framework\Option\ArrayInterface
 {
     /**
-     * {@inheritdoc}
+     * To Options Array
+     *
+     * @return array
      */
-    public function toOptionArray()
+    public function toOptionArray(): array
     {
         return [
             [

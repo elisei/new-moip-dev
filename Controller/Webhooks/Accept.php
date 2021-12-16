@@ -30,7 +30,7 @@ use Moip\Magento2\Gateway\Config\Config;
 class Accept extends Action implements Csrf
 {
     /**
-     * createCsrfValidationException.
+     * Create Csrf Validation Exception.
      *
      * @param RequestInterface $request
      *
@@ -44,7 +44,7 @@ class Accept extends Action implements Csrf
     }
 
     /**
-     * validateForCsrf.
+     * Validate For Csrf.
      *
      * @param RequestInterface $request
      *
@@ -113,6 +113,7 @@ class Accept extends Action implements Csrf
      * @param Config                $config
      * @param OrderInterfaceFactory $orderFactory
      * @param CreditmemoFactory     $creditmemoFactory
+     * @param CreditmemoService     $creditmemoService
      * @param Invoice               $invoice
      * @param StoreManagerInterface $storeManager
      * @param JsonFactory           $resultJsonFactory
@@ -120,8 +121,8 @@ class Accept extends Action implements Csrf
      */
     public function __construct(
         Context $context,
-        Config $config,
         Logger $logger,
+        Config $config,
         OrderInterfaceFactory $orderFactory,
         CreditmemoFactory $creditmemoFactory,
         CreditmemoService $creditmemoService,

@@ -36,7 +36,7 @@ class Refund extends Action implements Crsf
     /**
      * Create Csrf Validation Exception.
      *
-     * @param $request
+     * @param RequestInterface $request
      *
      * @return null
      */
@@ -50,7 +50,7 @@ class Refund extends Action implements Crsf
     /**
      * Validate For Csrf.
      *
-     * @param $request
+     * @param RequestInterface $request
      *
      * @return bool
      */
@@ -127,6 +127,7 @@ class Refund extends Action implements Crsf
      * @param Config                        $config
      * @param OrderInterfaceFactory         $orderFactory
      * @param CreditmemoFactory             $creditmemoFactory
+     * @param CreditmemoService             $creditmemoService
      * @param Invoice                       $invoice
      * @param StoreManagerInterface         $storeManager
      * @param JsonFactory                   $resultJsonFactory
@@ -136,8 +137,8 @@ class Refund extends Action implements Crsf
      */
     public function __construct(
         Context $context,
-        Config $config,
         Logger $logger,
+        Config $config,
         OrderInterfaceFactory $orderFactory,
         CreditmemoFactory $creditmemoFactory,
         CreditmemoService $creditmemoService,
@@ -264,7 +265,7 @@ class Refund extends Action implements Crsf
     /**
      * Get Creditmemo.
      *
-     * @params $extOrderId
+     * @param string $transactionId
      *
      * @return creditmemo
      */
@@ -287,8 +288,8 @@ class Refund extends Action implements Crsf
     /**
      * Create new creditmemo.
      *
-     * @params $extOrderId
-     * @parmas $extRefundId
+     * @param string $extOrderId
+     * @param string $extRefundId
      *
      * @return creditmemo
      */

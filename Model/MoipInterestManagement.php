@@ -28,8 +28,6 @@ use Moip\Magento2\Gateway\Config\ConfigCc;
 class MoipInterestManagement implements MoipInterestManagementInterface
 {
     /**
-     * Quote repository.
-     *
      * @var CartRepositoryInterface
      */
     protected $quoteRepository;
@@ -113,8 +111,8 @@ class MoipInterestManagement implements MoipInterestManagementInterface
     /**
      * Calc value Interest.
      *
-     * @param $quote
-     * @param $installment
+     * @param CartRepositoryInterface $quote
+     * @param int                     $installment
      *
      * @return float
      */
@@ -144,8 +142,8 @@ class MoipInterestManagement implements MoipInterestManagementInterface
     /**
      * Get Intereset for Simple.
      *
-     * @param $total
-     * @param $interest
+     * @param float $total
+     * @param float $interest
      *
      * @return float
      */
@@ -163,9 +161,9 @@ class MoipInterestManagement implements MoipInterestManagementInterface
     /**
      * Get Intereset for Compound.
      *
-     * @param $total
-     * @param $interest
-     * @param $portion
+     * @param float $total
+     * @param float $interest
+     * @param int   $portion
      *
      * @return float
      */

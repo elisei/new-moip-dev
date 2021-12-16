@@ -32,8 +32,8 @@ class PaymentGroup extends Fieldset
      * @param \Magento\Backend\Model\Auth\Session $authSession
      * @param \Magento\Framework\View\Helper\Js   $jsHelper
      * @param \Magento\Config\Model\Config        $backendConfig
-     * @param array                               $data
      * @param SecureHtmlRenderer|null             $secureRenderer
+     * @param array                               $data
      */
     public function __construct(
         \Magento\Backend\Block\Context $context,

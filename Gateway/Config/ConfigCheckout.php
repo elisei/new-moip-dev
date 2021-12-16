@@ -18,60 +18,44 @@ use Magento\Store\Model\ScopeInterface;
 class ConfigCheckout extends PaymentConfig
 {
     /**
-     * Method code - Boleto.
-     *
      * @const string
      */
-    const METHOD = 'moip_magento2_checkout';
+    public const METHOD = 'moip_magento2_checkout';
 
     /**
-     * Active - Boleto.
-     *
-     * @const boolean
-     */
-    const ACTIVE = 'active';
-
-    /**
-     * Title - Moip Checkout.
-     *
      * @const string
      */
-    const TITLE = 'title';
+    public const ACTIVE = 'active';
 
     /**
-     * Instruction in Checkout - Moip Checkout.
-     *
      * @const string
      */
-    const INSTRUCTION_CHECKOUT = 'instruction_checkout';
+    public const TITLE = 'title';
 
     /**
-     * Use tax document capture - Moip Checkout.
-     *
-     * @const boolean
-     */
-    const USE_GET_TAX_DOCUMENT = 'get_tax_document';
-
-    /**
-     * Use name capture - Moip Checkout.
-     *
-     * @const boolean
-     */
-    const USE_GET_NAME = 'get_name';
-
-    /**
-     * Use name capture - Moip Checkout.
-     *
-     * @const boolean
-     */
-    const USE_GET_INSTALLMENTS = 'get_enable_installments';
-
-    /**
-     * Maximum installments allowed - Moip Checkout.
-     *
      * @const string
      */
-    const USE_MAX_INSTALLMENTS = 'max_installments';
+    public const INSTRUCTION_CHECKOUT = 'instruction_checkout';
+
+    /**
+     * @const string
+     */
+    public const USE_GET_TAX_DOCUMENT = 'get_tax_document';
+
+    /**
+     * @const string
+     */
+    public const USE_GET_NAME = 'get_name';
+
+    /**
+     * @const string
+     */
+    public const USE_GET_INSTALLMENTS = 'get_enable_installments';
+
+    /**
+     * @const string
+     */
+    public const USE_MAX_INSTALLMENTS = 'max_installments';
 
     /**
      * @var ScopeConfigInterface
@@ -85,7 +69,7 @@ class ConfigCheckout extends PaymentConfig
 
     /**
      * @param ScopeConfigInterface $scopeConfig
-     * @param METHOD               $methodCode
+     * @param string               $methodCode
      */
     public function __construct(
         ScopeConfigInterface $scopeConfig,
@@ -97,6 +81,8 @@ class ConfigCheckout extends PaymentConfig
 
     /**
      * Get Payment configuration status.
+     *
+     * @param int|null $storeId
      *
      * @return bool
      */
@@ -114,6 +100,8 @@ class ConfigCheckout extends PaymentConfig
     /**
      * Get title of payment.
      *
+     * @param int|null $storeId
+     *
      * @return string|null
      */
     public function getTitle($storeId = null): ?string
@@ -129,6 +117,8 @@ class ConfigCheckout extends PaymentConfig
 
     /**
      * Get Instruction - Checkoout.
+     *
+     * @param int|null $storeId
      *
      * @return string|null
      */
@@ -146,6 +136,8 @@ class ConfigCheckout extends PaymentConfig
     /**
      * Get if you use document capture on the form.
      *
+     * @param int|null $storeId
+     *
      * @return bool
      */
     public function getUseTaxDocumentCapture($storeId = null): bool
@@ -161,6 +153,8 @@ class ConfigCheckout extends PaymentConfig
 
     /**
      * Get if you use name capture on the form.
+     *
+     * @param int|null $storeId
      *
      * @return bool
      */
@@ -178,6 +172,8 @@ class ConfigCheckout extends PaymentConfig
     /**
      * Get if you use installments.
      *
+     * @param int|null $storeId
+     *
      * @return bool
      */
     public function getUseInstallments($storeId = null): bool
@@ -193,6 +189,8 @@ class ConfigCheckout extends PaymentConfig
 
     /**
      * Get Max installments.
+     *
+     * @param int|null $storeId
      *
      * @return int
      */

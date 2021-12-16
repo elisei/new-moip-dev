@@ -105,11 +105,11 @@ class Totals extends Template
     /**
      * Get Subtotal label by Interest.
      *
-     * @param $interest
+     * @param string $interest
      *
      * @return Phrase
      */
-    public function getLabelByInterest($interest)
+    public function getLabelByInterest(string $interest)
     {
         if ($interest >= 0) {
             return __('Installment Interest');

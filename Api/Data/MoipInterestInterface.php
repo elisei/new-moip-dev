@@ -18,12 +18,12 @@ interface MoipInterestInterface
     /**
      * @const string
      */
-    const MOIP_INTEREST_AMOUNT = 'moip_interest_amount';
+    public const MOIP_INTEREST_AMOUNT = 'moip_interest_amount';
 
     /**
      * @const string
      */
-    const BASE_MOIP_INTEREST_AMOUNT = 'base_moip_interest_amount';
+    public const BASE_MOIP_INTEREST_AMOUNT = 'base_moip_interest_amount';
 
     /**
      * Get Installment for Moip Interest.

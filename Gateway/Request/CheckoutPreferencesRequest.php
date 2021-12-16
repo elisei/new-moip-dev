@@ -24,37 +24,37 @@ class CheckoutPreferencesRequest implements BuilderInterface
     /**
      * Checkout Preferences block name.
      */
-    const CHECKOUT_PREFERENCE = 'checkoutPreferences';
+    public const CHECKOUT_PREFERENCE = 'checkoutPreferences';
 
     /**
      * Redirect Urls block name.
      */
-    const REDIRECT_URLS = 'redirectUrls';
+    public const REDIRECT_URLS = 'redirectUrls';
 
     /**
      * Url for Callback Success.
      */
-    const REDIRECT_URL_SUCCESS = 'urlSuccess';
+    public const REDIRECT_URL_SUCCESS = 'urlSuccess';
 
     /**
      * Url for Callback Failure.
      */
-    const REDIRECT_URL_FAILURE = 'urlFailure';
+    public const REDIRECT_URL_FAILURE = 'urlFailure';
 
     /**
      * Installments Block name.
      */
-    const INSTALLMENTS = 'installments';
+    public const INSTALLMENTS = 'installments';
 
     /**
      * Installments Qty Block name.
      */
-    const INSTALLMENTS_QTY = 'quantity';
+    public const INSTALLMENTS_QTY = 'quantity';
 
     /**
      * Addition Qty Block name.
      */
-    const ADDITION = 'addition';
+    public const ADDITION = 'addition';
 
     /**
      * @var SubjectReader
@@ -111,7 +111,9 @@ class CheckoutPreferencesRequest implements BuilderInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Build.
+     *
+     * @param array $buildSubject
      */
     public function build(array $buildSubject)
     {
@@ -127,8 +129,6 @@ class CheckoutPreferencesRequest implements BuilderInterface
         $storeId = $order->getStoreId();
 
         $orderId = $orderAdapter->getId();
-        //tanto order adapter como o order do pay retorna null para getOrderId(), getId() ou getEntityId()... o.O
-        // $urlViewOrder = $this->urlHelper->getUrl('sales/order/view/', [ '_scope' => $storeId, 'order_id' => $orderId, '_nosid' => true ]);
         $urlViewOrder = $this->urlHelper->getUrl('sales/order/history/', ['_scope' => $storeId, '_nosid' => true]);
 
         $result[self::CHECKOUT_PREFERENCE][self::REDIRECT_URLS] = [
@@ -172,8 +172,8 @@ class CheckoutPreferencesRequest implements BuilderInterface
     /**
      * Get Intereset for Simple.
      *
-     * @param $total
-     * @param $interest
+     * @param float $total
+     * @param float $interest
      *
      * @return float
      */
@@ -191,9 +191,9 @@ class CheckoutPreferencesRequest implements BuilderInterface
     /**
      * Get Intereset for Compound.
      *
-     * @param $total
-     * @param $interest
-     * @param $portion
+     * @param float $total
+     * @param float $interest
+     * @param int $portion
      *
      * @return float
      */

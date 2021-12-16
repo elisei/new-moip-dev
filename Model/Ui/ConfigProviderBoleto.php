@@ -23,7 +23,7 @@ class ConfigProviderBoleto implements ConfigProviderInterface
     /*
      * @const string
      */
-    const CODE = 'moip_magento2_boleto';
+    public const CODE = 'moip_magento2_boleto';
 
     /**
      * @var Config

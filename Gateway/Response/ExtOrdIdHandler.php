@@ -17,15 +17,17 @@ use Magento\Payment\Gateway\Response\HandlerInterface;
 class ExtOrdIdHandler implements HandlerInterface
 {
     /**
-     * @const EXT ORD ID
+     * @const string
      */
-    const EXTERNAL_ORDER_ID = 'EXT_ORD_ID';
+    public const EXTERNAL_ORDER_ID = 'EXT_ORD_ID';
 
     /**
      * Handles.
      *
      * @param array $handlingSubject
      * @param array $response
+     *
+     * @return void
      */
     public function handle(array $handlingSubject, array $response)
     {

@@ -20,67 +20,49 @@ use Magento\Store\Model\ScopeInterface;
 class ConfigCc extends PaymentConfig
 {
     /**
-     * Method Code - Cc.
-     *
      * @const string
      */
-    const METHOD = 'moip_magento2_cc';
+    public const METHOD = 'moip_magento2_cc';
 
     /**
-     * Cc Tyoes - Cc.
-     *
-     * @const array
-     */
-    const CC_TYPES = 'payment/moip_magento2_cc/cctypes';
-
-    /**
-     * CVV Enabled - Cc.
-     *
-     * @const boolean
-     */
-    const CVV_ENABLED = 'cvv_enabled';
-
-    /**
-     * Active - Cc.
-     *
-     * @const boolean
-     */
-    const ACTIVE = 'active';
-
-    /**
-     * Title - Cc.
-     *
      * @const string
      */
-    const TITLE = 'title';
+    public const CC_TYPES = 'payment/moip_magento2_cc/cctypes';
 
     /**
-     * Mapper CC.
-     *
      * @const string
      */
-    const CC_MAPPER = 'cctypes_moip_magento2_cc_mapper';
+    public const CVV_ENABLED = 'cvv_enabled';
 
     /**
-     * Use tax document capture - Cc.
-     *
-     * @const boolean
+     * @const string
      */
-    const USE_GET_TAX_DOCUMENT = 'get_tax_document';
+    public const ACTIVE = 'active';
 
     /**
-     * Use birth date capture - Cc.
-     *
-     * @const boolean
+     * @const string
      */
-    const USE_GET_BIRTH_DATE = 'get_birth_date';
+    public const TITLE = 'title';
 
     /**
-     * Use phone capture - Cc.
-     *
-     * @const boolean
+     * @const string
      */
-    const USE_GET_PHONE = 'get_phone';
+    public const CC_MAPPER = 'cctypes_moip_magento2_cc_mapper';
+
+    /**
+     * @const string
+     */
+    public const USE_GET_TAX_DOCUMENT = 'get_tax_document';
+
+    /**
+     * @const string
+     */
+    public const USE_GET_BIRTH_DATE = 'get_birth_date';
+
+    /**
+     * @const string
+     */
+    public const USE_GET_PHONE = 'get_phone';
 
     /**
      * @var ScopeConfigInterface
@@ -90,7 +72,7 @@ class ConfigCc extends PaymentConfig
     /**
      * @param ScopeConfigInterface $scopeConfig
      * @param Json                 $json
-     * @param METHOD               $methodCode
+     * @param string               $methodCode
      */
     public function __construct(
         ScopeConfigInterface $scopeConfig,
@@ -123,6 +105,8 @@ class ConfigCc extends PaymentConfig
     /**
      * Get Payment configuration status.
      *
+     * @param int|null $storeId
+     *
      * @return bool
      */
     public function isActive($storeId = null): bool
@@ -138,6 +122,8 @@ class ConfigCc extends PaymentConfig
 
     /**
      * Get title of payment.
+     *
+     * @param int|null $storeId
      *
      * @return string|null
      */
@@ -155,6 +141,8 @@ class ConfigCc extends PaymentConfig
     /**
      * Get if you use document capture on the form.
      *
+     * @param int|null $storeId
+     *
      * @return bool
      */
     public function getUseTaxDocumentCapture($storeId = null): bool
@@ -171,6 +159,8 @@ class ConfigCc extends PaymentConfig
     /**
      * Get if you use birth date capture on the form.
      *
+     * @param int|null $storeId
+     *
      * @return bool
      */
     public function getUseBirthDateCapture($storeId = null): bool
@@ -186,6 +176,8 @@ class ConfigCc extends PaymentConfig
 
     /**
      * Get if you use phone capture on the form.
+     *
+     * @param int|null $storeId
      *
      * @return bool
      */
@@ -240,6 +232,8 @@ class ConfigCc extends PaymentConfig
 
     /**
      * Get info interest.
+     *
+     * @param int|null $storeId
      *
      * @return array
      */
@@ -314,6 +308,8 @@ class ConfigCc extends PaymentConfig
     /**
      * Get type Interest.
      *
+     * @param int|null $storeId
+     *
      * @return string
      */
     public function getTypeInstallment($storeId = null): ?string
@@ -327,6 +323,8 @@ class ConfigCc extends PaymentConfig
 
     /**
      * Get min installment.
+     *
+     * @param int|null $storeId
      *
      * @return string
      */
@@ -342,7 +340,9 @@ class ConfigCc extends PaymentConfig
     /**
      * Get max installment.
      *
-     * @return int
+     * @param int|null $storeId
+     *
+     * @return int|null
      */
     public function getMaxInstallment($storeId = null): ?int
     {
@@ -355,6 +355,8 @@ class ConfigCc extends PaymentConfig
 
     /**
      * Get is enable instant purchase.
+     *
+     * @param int|null $storeId
      *
      * @return bool
      */

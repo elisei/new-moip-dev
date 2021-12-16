@@ -18,7 +18,7 @@ $title = $block->escapeHtml($block->getMethod()->getTitle());
             <tr>
                 <th scope="row"><?= $block->escapeHtml($label) ?></th>
                 <td>
-                    <?= /* @escapeNotVerified */ $value ?>
+                    <?= /* @escapeNotVerified */ $block->escapeHtml($value) ?>
                 </td>
             </tr>
         <?php endforeach; ?>

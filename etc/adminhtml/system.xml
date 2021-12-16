@@ -18,7 +18,7 @@
                     <comment>List the attributes of your Magento the data expected by our API</comment>
                     <field id="type_cpf" translate="label select" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                         <label>The CPF/CNPJ will be an attribute obtained from the</label>
-                        <source_model>Moip\Magento2\Block\Adminhtml\System\Config\TypeCPF</source_model>
+                        <source_model>Moip\Magento2\Block\Adminhtml\System\Config\TypeCpf</source_model>
                         <config_path>payment/moip_magento2/type_cpf</config_path>
                         <validate>required-entry validate-select</validate>
                     </field>

@@ -29,8 +29,8 @@ class FormBoleto extends \Magento\Payment\Block\Form
     protected $configBoleto;
 
     /**
-     * @param Context
-     * @param ConfigBoleto
+     * @param Context      $context
+     * @param ConfigBoleto $configBoleto
      */
     public function __construct(
         Context $context,
@@ -43,8 +43,6 @@ class FormBoleto extends \Magento\Payment\Block\Form
     /**
      * Title - Boleto.
      *
-     * @var string
-     *
      * @return string
      */
     public function getTitle()
@@ -55,8 +53,6 @@ class FormBoleto extends \Magento\Payment\Block\Form
     /**
      * Instruction - Boleto.
      *
-     * @var string
-     *
      * @return string
      */
     public function getInstruction()
@@ -66,8 +62,6 @@ class FormBoleto extends \Magento\Payment\Block\Form
 
     /**
      * Expiration - Boleto.
-     *
-     * @var date
      *
      * @return string
      */

@@ -45,11 +45,10 @@ class VaultDetailsHandler implements HandlerInterface
     private $json;
 
     /**
-     * AccountPaymentTokenFactory constructor.
-     *
-     * @param ObjectManagerInterface       $objectManager
-     * @param PaymentTokenFactoryInterface $paymentTokenFactory
-     * @param Json                         $json
+     * @param Json                                  $json
+     * @param ObjectManagerInterface                $objectManager
+     * @param OrderPaymentExtensionInterfaceFactory $payExtensionFactory
+     * @param PaymentTokenFactoryInterface          $paymentTokenFactory
      */
     public function __construct(
         Json $json,
@@ -68,7 +67,12 @@ class VaultDetailsHandler implements HandlerInterface
     }
 
     /**
-     * @inheritdoc
+     * Handle
+     *
+     * @param array $handlingSubject
+     * @param array $response
+     *
+     * @return void
      */
     public function handle(array $handlingSubject, array $response)
     {
@@ -97,7 +101,8 @@ class VaultDetailsHandler implements HandlerInterface
     /**
      * Get vault payment token entity.
      *
-     * @param $response
+     * @param array         $response
+     * @param InfoInterface $payment
      *
      * @return PaymentTokenInterface|null
      */
@@ -159,6 +164,8 @@ class VaultDetailsHandler implements HandlerInterface
      * Get Type Cc by response payment.
      *
      * @param string $type
+     *
+     * @return string
      */
     public function mapperCcType($type)
     {

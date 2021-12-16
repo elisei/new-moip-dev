@@ -11,9 +11,9 @@ namespace Moip\Magento2\Block\Adminhtml\System\Config;
 use Magento\Framework\Option\ArrayInterface;
 
 /**
- * Class TypeCPF - Defines tax document.
+ * Class TypeCpf - Defines tax document.
  */
-class TypeCPF implements ArrayInterface
+class TypeCpf implements ArrayInterface
 {
     /**
      * Returns Options.

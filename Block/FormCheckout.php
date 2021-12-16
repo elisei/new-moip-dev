@@ -47,11 +47,11 @@ class FormCheckout extends \Magento\Payment\Block\Form
     private $priceHelper;
 
     /**
-     * @param Context
-     * @param Quote
-     * @param ConfigCc
-     * @param ConfigCheckout
-     * @param PriceHelper
+     * @param Context $context
+     * @param Quote $session
+     * @param ConfigCc $configCc
+     * @param ConfigCheckout $configCheckout
+     * @param PriceHelper $priceHelper
      */
     public function __construct(
         Context $context,
@@ -133,7 +133,7 @@ class FormCheckout extends \Magento\Payment\Block\Form
     /**
      * Installments - Cc.
      *
-     * @param $amount
+     * @param float $amount
      *
      * @return array
      */
@@ -160,9 +160,9 @@ class FormCheckout extends \Magento\Payment\Block\Form
     /**
      * Interest Simple - Cc.
      *
-     * @param total
-     * @param $interest
-     * @param $portion
+     * @param float $total
+     * @param float $interest
+     * @param int   $portion
      *
      * @return float
      */
@@ -181,9 +181,9 @@ class FormCheckout extends \Magento\Payment\Block\Form
     /**
      * Interest Compound - Cc.
      *
-     * @param total
-     * @param $interest
-     * @param $portion
+     * @param float $total
+     * @param float $interest
+     * @param int   $portion
      *
      * @return float
      */

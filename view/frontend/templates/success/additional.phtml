@@ -30,7 +30,7 @@
             <?= /* @noEscape */ __('Print your ticket bank') ?> 
         </a>
     </p>
-    <script type="text/javascript">
+    <?php $scriptString = <<<script
         document.getElementById("copyButton").addEventListener("click", function() {
             copyToClipboard(document.getElementById("copyTarget"));
         });
@@ -82,6 +82,8 @@
                 target.textContent = "";
             }
             return succeed;
-    }
-    </script>
+        }
+    script;
+    ?>
+    <?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false) ?>
 <?php endif; ?>

@@ -24,7 +24,10 @@ use Moip\Magento2\Gateway\Config\Config;
  */
 class AuthorizeClient implements ClientInterface
 {
-    const MOIP_ORDER_ID = 'moip_order_id';
+    /**
+     * @var string
+     */
+    public const MOIP_ORDER_ID = 'moip_order_id';
 
     /**
      * @var Logger

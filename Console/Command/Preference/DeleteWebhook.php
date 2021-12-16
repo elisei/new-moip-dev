@@ -22,7 +22,7 @@ class DeleteWebhook extends Command
     /**
      * @const string
      */
-    const WEBHOOK_ID = 'id';
+    public const WEBHOOK_ID = 'id';
 
     /**
      * @var Delete
@@ -35,8 +35,6 @@ class DeleteWebhook extends Command
     protected $state;
 
     /**
-     * DeleteWebhook constructor.
-     *
      * @param State  $state
      * @param Delete $delete
      */
@@ -50,7 +48,10 @@ class DeleteWebhook extends Command
     }
 
     /**
-     * {@inheritdoc}
+     * Execute.
+     *
+     * @param InputInterface  $input
+     * @param OutputInterface $output
      */
     protected function execute(
         InputInterface $input,
@@ -64,7 +65,9 @@ class DeleteWebhook extends Command
     }
 
     /**
-     * {@inheritdoc}
+     * Configure.
+     *
+     * @return void
      */
     protected function configure()
     {

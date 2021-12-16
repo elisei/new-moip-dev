@@ -15,48 +15,53 @@ class Creditmemo extends \Magento\Backend\Block\Template
     /**
      * @const string
      */
-    const BANK_NUMBER = 'moip_magento2_boleto_bank_number';
+    public const BANK_NUMBER = 'moip_magento2_boleto_bank_number';
 
     /**
      * @const string
      */
-    const AGENCY_NUMBER = 'moip_magento2_boleto_agency_number';
+    public const AGENCY_NUMBER = 'moip_magento2_boleto_agency_number';
 
     /**
      * @const string
      */
-    const AGENCY_CHECK_NUMBER = 'moip_magento2_boleto_agency_check_number';
+    public const AGENCY_CHECK_NUMBER = 'moip_magento2_boleto_agency_check_number';
 
     /**
      * @const string
      */
-    const ACCOUNT_NUMBER = 'moip_magento2_boleto_account_number';
+    public const ACCOUNT_NUMBER = 'moip_magento2_boleto_account_number';
 
     /**
      * @const string
      */
-    const ACCOUNT_CHECK_NUMBER = 'moip_magento2_boleto_account_check_number';
+    public const ACCOUNT_CHECK_NUMBER = 'moip_magento2_boleto_account_check_number';
 
     /**
      * @const string
      */
-    const HOLDER_FULLNAME = 'moip_magento2_boleto_account_holder_fullname';
+    public const HOLDER_FULLNAME = 'moip_magento2_boleto_account_holder_fullname';
 
     /**
      * @const string
      */
-    const HOLDER_DOCUMENT_NUMBER = 'moip_magento2_boleto_account_holder_document_number';
+    public const HOLDER_DOCUMENT_NUMBER = 'moip_magento2_boleto_account_holder_document_number';
 
     /**
      * @const string
      */
-    const CREDITMEMO_COMMENT_TEXT = 'comment_text';
+    public const CREDITMEMO_COMMENT_TEXT = 'comment_text';
 
     /**
      * @var \Magento\Framework\Registry
      */
     private $coreRegistry;
 
+    /**
+     * @param Context  $context
+     * @param Registry $registry
+     * @param array    $data
+     */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
         \Magento\Framework\Registry $registry,
@@ -67,6 +72,8 @@ class Creditmemo extends \Magento\Backend\Block\Template
     }
 
     /**
+     * Get Credit Memo.
+     *
      * @return \Magento\Sales\Model\Order\Creditmemo
      */
     public function getCreditmemo()
@@ -75,6 +82,8 @@ class Creditmemo extends \Magento\Backend\Block\Template
     }
 
     /**
+     * Get Order.
+     *
      * @return \Magento\Sales\Model\Order
      */
     public function getOrder()
@@ -102,9 +111,9 @@ class Creditmemo extends \Magento\Backend\Block\Template
     /**
      * Json configuration for tooltip.
      *
-     * @parms $field
+     * @param string $field
      *
-     * @return string json
+     * @return json
      */
     public function getTooltipConfig($field)
     {
@@ -121,26 +130,51 @@ class Creditmemo extends \Magento\Backend\Block\Template
         return str_replace('"', "'", \Zend_Json::encode($tooltipConfig));
     }
 
+    /**
+     * Get Bank Number.
+     *
+     * @return string
+     */
     public function getBankNumber()
     {
         return $this->getCreditmemo()->getData(self::BANK_NUMBER);
     }
 
+    /**
+     * Get Agency Number.
+     *
+     * @return string
+     */
     public function getAgencyNumber()
     {
         return $this->getCreditmemo()->getData(self::AGENCY_NUMBER);
     }
 
+    /**
+     * Get Agency Check Number.
+     *
+     * @return string
+     */
     public function getAgencyCheckNumber()
     {
         return $this->getCreditmemo()->getData(self::AGENCY_CHECK_NUMBER);
     }
 
+    /**
+     * Get Account Number.
+     *
+     * @return string
+     */
     public function getAccountNumber()
     {
         return $this->getCreditmemo()->getData(self::ACCOUNT_NUMBER);
     }
 
+    /**
+     * Get Account Check Number.
+     *
+     * @return string
+     */
     public function getAccountCheckNumber()
     {
         return $this->getCreditmemo()->getData(self::ACCOUNT_CHECK_NUMBER);

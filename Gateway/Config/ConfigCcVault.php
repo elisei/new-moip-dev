@@ -17,24 +17,18 @@ use Magento\Store\Model\ScopeInterface;
 class ConfigCcVault extends PaymentConfig
 {
     /**
-     * CVV Enabled - Cc Vault.
-     *
      * @const string
      */
-    const CVV_ENABLED = 'cvv_enabled';
+    public const CVV_ENABLED = 'cvv_enabled';
 
     /**
-     * Method Code - Cc Vault.
-     *
      * @const string
      */
-    const METHOD = 'moip_magento2_cc_vault';
+    public const METHOD = 'moip_magento2_cc_vault';
 
     /**
-     * Config constructor.
-     *
      * @param ScopeConfigInterface $scopeConfig
-     * @param METHOD               $methodCode
+     * @param string               $methodCode
      */
     public function __construct(
         ScopeConfigInterface $scopeConfig,
@@ -45,8 +39,9 @@ class ConfigCcVault extends PaymentConfig
     }
 
     /**
-     * @throws InputException
-     * @throws NoSuchEntityException
+     * Get If Use Cvv
+     *
+     * @param int|null $storeId
      *
      * @return bool
      */

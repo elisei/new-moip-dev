@@ -28,10 +28,8 @@ class OrderAdapter implements OrderAdapterInterface
     private $addAdapterFactory;
 
     /**
-     * OrderAdapter constructor.
-     *
-     * @param Order
-     * @param AddressAdapter
+     * @param Order          $order
+     * @param AddressAdapter $addAdapterFactory
      */
     public function __construct(
         Order $order,
@@ -226,6 +224,8 @@ class OrderAdapter implements OrderAdapterInterface
     /**
      * Set order moip interest amount.
      *
+     * @param int $interest
+     *
      * @return float|null
      */
     public function setMoipInterestAmount($interest)
@@ -235,6 +235,8 @@ class OrderAdapter implements OrderAdapterInterface
 
     /**
      * Set order base moip interest amount.
+     *
+     * @param float $interest
      *
      * @return float|null
      */

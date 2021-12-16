@@ -45,8 +45,6 @@ class MoipInterest extends AbstractTotal
     protected $_payment;
 
     /**
-     * Payment MoipInterest constructor.
-     *
      * @param QuoteValidator   $quoteValidator
      * @param Session          $checkoutSession
      * @param PaymentInterface $payment
@@ -136,11 +134,11 @@ class MoipInterest extends AbstractTotal
     /**
      * Get Subtotal label by Interest.
      *
-     * @param $interest
+     * @param string $interest
      *
      * @return Phrase
      */
-    public function getLabelByInterest($interest)
+    public function getLabelByInterest(string $interest)
     {
         if ($interest >= 0) {
             return __('Installment Interest');

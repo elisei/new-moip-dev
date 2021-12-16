@@ -29,8 +29,6 @@ class ListWebhook extends Command
     protected $state;
 
     /**
-     * CreateWebhook constructor.
-     *
      * @param State $state
      * @param All   $all
      */
@@ -44,7 +42,10 @@ class ListWebhook extends Command
     }
 
     /**
-     * {@inheritdoc}
+     * Execute.
+     *
+     * @param InputInterface  $input
+     * @param OutputInterface $output
      */
     protected function execute(
         InputInterface $input,
@@ -56,7 +57,9 @@ class ListWebhook extends Command
     }
 
     /**
-     * {@inheritdoc}
+     * Configure.
+     *
+     * @return void
      */
     protected function configure()
     {

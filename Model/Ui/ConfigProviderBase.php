@@ -21,27 +21,27 @@ class ConfigProviderBase implements ConfigProviderInterface
     /*
      * @const string
      */
-    const CODE = 'moip_magento2';
+    public const CODE = 'moip_magento2';
 
     /*
      * @var METHOD CODE CC
      */
-    const METHOD_CODE_CC = 'moip_magento2_cc';
+    public const METHOD_CODE_CC = 'moip_magento2_cc';
 
     /*
      * @var METHOD CODE CC VAULT
      */
-    const METHOD_CODE_CC_VAULT = 'moip_magento2_cc_vault';
+    public const METHOD_CODE_CC_VAULT = 'moip_magento2_cc_vault';
 
     /*
      * @var METHOD CODE BOLETO
      */
-    const METHOD_CODE_BOLETO = 'moip_magento2_boleto';
+    public const METHOD_CODE_BOLETO = 'moip_magento2_boleto';
 
     /*
      * @var METHOD CODE CHECKOUT
      */
-    const METHOD_CODE_CHECKOUT = 'moip_magento2_checkout';
+    public const METHOD_CODE_CHECKOUT = 'moip_magento2_checkout';
 
     /**
      * @var Config
@@ -57,11 +57,6 @@ class ConfigProviderBase implements ConfigProviderInterface
      * @var CcConfig
      */
     protected $ccConfig;
-
-    /**
-     * @var \Magento\Framework\View\Asset\Source
-     */
-    protected $assetSource;
 
     /**
      * @param Config        $config

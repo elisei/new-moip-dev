@@ -17,15 +17,17 @@ use Magento\Payment\Gateway\Response\HandlerInterface;
 class DenyPaymentHandler implements HandlerInterface
 {
     /**
-     * @const TXN ID
+     * @const string
      */
-    const TXN_ID = 'TXN_ID';
+    public const TXN_ID = 'TXN_ID';
 
     /**
      * Handles.
      *
      * @param array $handlingSubject
      * @param array $response
+     *
+     * @return void
      */
     public function handle(array $handlingSubject, array $response)
     {

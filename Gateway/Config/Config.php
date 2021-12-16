@@ -20,200 +20,144 @@ use Magento\Store\Model\ScopeInterface;
 class Config extends PaymentConfig
 {
     /**
-     * Method code - Base.
-     *
      * @const string
      */
-    const METHOD = 'moip_magento2';
+    public const METHOD = 'moip_magento2';
 
     /**
-     * Round up -  Used to define float in integers.
-     *
      * @const int
      */
-    const ROUND_UP = 100;
+    public const ROUND_UP = 100;
 
     /**
-     * endpoint of production.
-     *
      * @const string
      */
-    const ENDPOINT_PRODUCTION = 'https://api.moip.com.br/v2/';
+    public const ENDPOINT_PRODUCTION = 'https://api.moip.com.br/v2/';
 
     /**
-     * environment mode production.
-     *
      * @const string
      */
-    const ENVIRONMENT_PRODUCTION = 'production';
+    public const ENVIRONMENT_PRODUCTION = 'production';
 
     /**
-     * endpoint of sandbox.
-     *
      * @const string
      */
-    const ENDPOINT_SANDBOX = 'https://sandbox.moip.com.br/v2/';
+    public const ENDPOINT_SANDBOX = 'https://sandbox.moip.com.br/v2/';
 
     /**
-     * environment mode sandbox.
-     *
      * @const string
      */
-    const ENVIRONMENT_SANDBOX = 'sandbox';
+    public const ENVIRONMENT_SANDBOX = 'sandbox';
 
     /**
-     * Client name.
-     *
-     * @const string
-     * */
-    const CLIENT = 'Magento2';
-
-    /**
-     * Client Version - API version.
-     *
      * @const string
      */
-    const CLIENT_VERSION = '2.0.0';
+    public const CLIENT = 'Magento2';
 
     /**
-     * Config Pattern for Atribute.
-     *
      * @const string
      */
-    const PATTERN_FOR_ATTRIBUTES = 'moip_magento2';
+    public const CLIENT_VERSION = '2.0.0';
 
     /**
-     * Config Pattern for Credentials.
-     *
      * @const string
      */
-    const PATTERN_FOR_CREDENTIALS = 'moip_credentials';
+    public const PATTERN_FOR_ATTRIBUTES = 'moip_magento2';
 
     /**
-     * URI For Oauth.
-     *
      * @const string
      */
-    const OAUTH_URI = 'http://moip.o2ti.com/magento/redirect/';
+    public const PATTERN_FOR_CREDENTIALS = 'moip_credentials';
 
     /**
-     * Scope App.
-     *
      * @const string
      */
-    const OAUTH_SCOPE = 'RECEIVE_FUNDS,REFUND,MANAGE_ACCOUNT_INFO,DEFINE_PREFERENCES,RETRIEVE_FINANCIAL_INFO';
+    public const OAUTH_URI = 'http://moip.o2ti.com/magento/redirect/';
 
     /**
-     * Token App - Sandbox.
-     *
      * @const string
      */
-    const OAUTH_TOKEN_SANDBOX = '8OKLQFT5XQZXU7CKXX43GPJOMIJPMSMF';
+    public const OAUTH_SCOPE = 'RECEIVE_FUNDS,REFUND,MANAGE_ACCOUNT_INFO,DEFINE_PREFERENCES,RETRIEVE_FINANCIAL_INFO';
 
     /**
-     * Key App - Sandbox.
-     *
      * @const string
      */
-    const OAUTH_KEY_SANDBOX = 'NT0UKOXS4ALNSVOXJVNXVKRLEOQCITHI5HDKW3LI';
+    public const OAUTH_TOKEN_SANDBOX = '8OKLQFT5XQZXU7CKXX43GPJOMIJPMSMF';
 
     /**
-     * URI For Keys - Sandbox.
-     *
      * @const string
      */
-    const URL_KEY_SANDBOX = 'https://sandbox.moip.com.br/v2/keys/';
+    public const OAUTH_KEY_SANDBOX = 'NT0UKOXS4ALNSVOXJVNXVKRLEOQCITHI5HDKW3LI';
 
     /**
-     * Endpoint For Oauth - Sandbox.
-     *
      * @const string
      */
-    const ENDPOINT_OAUTH_SANDBOX = 'https://connect-sandbox.moip.com.br/oauth/authorize';
+    public const URL_KEY_SANDBOX = 'https://sandbox.moip.com.br/v2/keys/';
 
     /**
-     * Endpoint For Get Token Oauth - Sandbox.
-     *
      * @const string
      */
-    const ENDPOINT_OAUTH_TOKEN_SANDBOX = 'https://connect-sandbox.moip.com.br/oauth/token';
+    public const ENDPOINT_OAUTH_SANDBOX = 'https://connect-sandbox.moip.com.br/oauth/authorize';
 
     /**
-     * Endpoint For Preferences - Sandbox.
-     *
      * @const string
      */
-    const ENDPOINT_PREFERENCES_SANDBOX = 'https://sandbox.moip.com.br/v2/preferences/notifications/';
+    public const ENDPOINT_OAUTH_TOKEN_SANDBOX = 'https://connect-sandbox.moip.com.br/oauth/token';
 
     /**
-     * URI App Id - Sandbox.
-     *
      * @const string
      */
-    const APP_ID_SANDBOX = 'APP-9MUFQ39Y4CQU';
+    public const ENDPOINT_PREFERENCES_SANDBOX = 'https://sandbox.moip.com.br/v2/preferences/notifications/';
 
     /**
-     * Secrect For Oauth - Sandbox.
-     *
      * @const string
      */
-    const CLIENT_SECRECT_SANDBOX = '26xa86dbc7mhdyqq2w69vscvhz47cri';
+    public const APP_ID_SANDBOX = 'APP-9MUFQ39Y4CQU';
 
     /**
-     * Endpoint For Oauth - Sandbox.
-     *
      * @const string
      */
-    const ENDPOINT_OAUTH_PRODUCTION = 'https://connect.moip.com.br/oauth/authorize';
+    public const CLIENT_SECRECT_SANDBOX = '26xa86dbc7mhdyqq2w69vscvhz47cri';
 
     /**
-     * Endpoint For Get Token Oauth - Sandbox.
-     *
      * @const string
      */
-    const ENDPOINT_OAUTH_TOKEN_PRODUCTION = 'https://connect.moip.com.br/oauth/token';
+    public const ENDPOINT_OAUTH_PRODUCTION = 'https://connect.moip.com.br/oauth/authorize';
 
     /**
-     * Token App - Sandbox.
-     *
      * @const string
      */
-    const OAUTH_TOKEN_PPRODUCTION = 'EVCHBAUMKM0U4EE4YXIA8VMC0KBEPKN2';
+    public const ENDPOINT_OAUTH_TOKEN_PRODUCTION = 'https://connect.moip.com.br/oauth/token';
 
     /**
-     * Key App - Sandbox.
-     *
      * @const string
      */
-    const OAUTH_KEY_PRODUCTION = '4NECP62EKI8HRSMN3FGYOZNVYZOMBDY0EQHK9MHO';
+    public const OAUTH_TOKEN_PPRODUCTION = 'EVCHBAUMKM0U4EE4YXIA8VMC0KBEPKN2';
 
     /**
-     * URI For Keys - Production.
-     *
      * @const string
      */
-    const URL_KEY_PRODUCTION = 'https://api.moip.com.br/v2/keys/';
+    public const OAUTH_KEY_PRODUCTION = '4NECP62EKI8HRSMN3FGYOZNVYZOMBDY0EQHK9MHO';
 
     /**
-     * Endpoint For Preferences - Sandbox.
-     *
      * @const string
      */
-    const ENDPOINT_PREFERENCES_PRODUCTION = 'https://api.moip.com.br/v2/preferences/notifications/';
+    public const URL_KEY_PRODUCTION = 'https://api.moip.com.br/v2/keys/';
 
     /**
-     * URI App Id - Production.
-     *
      * @const string
      */
-    const APP_ID_PRODUCTION = 'APP-AKYBMMVU1FL1';
+    public const ENDPOINT_PREFERENCES_PRODUCTION = 'https://api.moip.com.br/v2/preferences/notifications/';
 
     /**
-     * Secrect For Oauth - Production.
-     *
      * @const string
      */
-    const CLIENT_SECRECT_PRODUCTION = 'db9pavx8542khvsyn3s0tpxyu2gom2m';
+    public const APP_ID_PRODUCTION = 'APP-AKYBMMVU1FL1';
+
+    /**
+     * @const string
+     */
+    public const CLIENT_SECRECT_PRODUCTION = 'db9pavx8542khvsyn3s0tpxyu2gom2m';
 
     /**
      * @var ScopeConfigInterface
@@ -228,7 +172,7 @@ class Config extends PaymentConfig
     /**
      * @param ScopeConfigInterface $scopeConfig
      * @param Json                 $json
-     * @param METHOD               $methodCode
+     * @param string               $methodCode
      */
     public function __construct(
         ScopeConfigInterface $scopeConfig,
@@ -457,13 +401,22 @@ class Config extends PaymentConfig
         }
     }
 
-    public function getStatementDescriptor($storeId = null)
+    /**
+     * Get Statement Descriptor.
+     *
+     * @param int|null $storeId
+     *
+     * @return string|null
+     */
+    public function getStatementDescriptor($storeId = null): ?string
     {
         return  $this->getAddtionalValue('statement_descriptor', $storeId);
     }
 
     /**
      * Cc Mapper.
+     *
+     * @param int|null $storeId
      *
      * @return array
      */
@@ -482,11 +435,10 @@ class Config extends PaymentConfig
     /**
      * Gets the AddtionalValues.
      *
-     * @param string   $typePattern
      * @param string   $field
      * @param int|null $storeId
      *
-     * @return string
+     * @return string|null
      */
     public function getAddtionalValue($field, $storeId = null): ?string
     {
@@ -502,11 +454,10 @@ class Config extends PaymentConfig
     /**
      * Gets the SlipValue.
      *
-     * @param string   $typePattern
      * @param string   $field
      * @param int|null $storeId
      *
-     * @return string
+     * @return string|null
      */
     public function getSplitValue($field, $storeId = null): ?string
     {
@@ -524,7 +475,7 @@ class Config extends PaymentConfig
      *
      * @param int|null $storeId
      *
-     * @return string
+     * @return string|null
      */
     public function getMoipCategory($storeId = null): ?string
     {

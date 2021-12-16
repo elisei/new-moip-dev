@@ -21,19 +21,19 @@ class TaxDocumentDataRequest implements BuilderInterface
     /**
      * BillingAddress block name.
      */
-    const TAX_DOCUMENT = 'taxDocument';
+    public const TAX_DOCUMENT = 'taxDocument';
 
     /**
      * The street address. Maximum 255 characters
      * Required.
      */
-    const TAX_DOCUMENT_TYPE = 'type';
+    public const TAX_DOCUMENT_TYPE = 'type';
 
     /**
      * The street number. 1 or 10 alphanumeric digits
      * Required.
      */
-    const TAX_DOCUMENT_NUMBER = 'number';
+    public const TAX_DOCUMENT_NUMBER = 'number';
 
     /**
      * @var SubjectReader
@@ -66,9 +66,9 @@ class TaxDocumentDataRequest implements BuilderInterface
     }
 
     /**
-     * get Value For Tax Document.
+     * Get Value For Tax Document.
      *
-     * @param $orderAdapter
+     * @param OrderAdapterFactory $orderAdapter
      *
      * @return string
      */
@@ -107,7 +107,9 @@ class TaxDocumentDataRequest implements BuilderInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Build.
+     *
+     * @param array $buildSubject
      */
     public function build(array $buildSubject)
     {

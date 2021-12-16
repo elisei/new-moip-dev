@@ -38,7 +38,9 @@ class Totals extends Template
     }
 
     /**
-     * @return $this
+     * Init Totals.
+     *
+     * @return void
      */
     public function initTotals()
     {

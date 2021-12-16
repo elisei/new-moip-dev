@@ -17,29 +17,59 @@ use Magento\Payment\Gateway\Response\HandlerInterface;
 class ExtOrdIdCheckoutHandler implements HandlerInterface
 {
     /**
-     * @const EXT ORD ID
+     * @const string
      */
-    const EXTERNAL_ORDER_ID = 'EXT_ORD_ID';
+    public const EXTERNAL_ORDER_ID = 'EXT_ORD_ID';
 
-    const TAG_INFO_CHECKOUT = 'checkout_url';
+    /**
+     * @const string
+     */
+    public const TAG_INFO_CHECKOUT = 'checkout_url';
 
-    const TAG_INFO_CC = 'checkout_cc';
+    /**
+     * @const string
+     */
+    public const TAG_INFO_CC = 'checkout_cc';
 
-    const TAG_INFO_BOLETO = 'checkout_boleto';
+    /**
+     * @const string
+     */
+    public const TAG_INFO_BOLETO = 'checkout_boleto';
 
-    const TAG_METHOD_NAME = 'method_name';
+    /**
+     * @const string
+     */
+    public const TAG_METHOD_NAME = 'method_name';
 
-    const TAG_LINKS = '_links';
+    /**
+     * @const string
+     */
+    public const TAG_LINKS = '_links';
 
-    const TAG_CHECKOUT = 'checkout';
+    /**
+     * @const string
+     */
+    public const TAG_CHECKOUT = 'checkout';
 
-    const TAG_PAY_CHECKOUT = 'payCheckout';
+    /**
+     * @const string
+     */
+    public const TAG_PAY_CHECKOUT = 'payCheckout';
 
-    const TAG_PAY_CC = 'payCreditCard';
+    /**
+     * @const string
+     */
+    public const TAG_PAY_CC = 'payCreditCard';
 
-    const TAG_PAY_BOLETO = 'payBoleto';
+    /**
+     * @const string
+     */
+    public const TAG_PAY_BOLETO = 'payBoleto';
 
-    const TAG_REDIRECT_HREF = 'redirectHref';
+    /**
+     * @const string
+     */
+    public const TAG_REDIRECT_HREF = 'redirectHref';
 
     /**
      * Handles.
@@ -70,16 +100,19 @@ class ExtOrdIdCheckoutHandler implements HandlerInterface
                 self::TAG_METHOD_NAME,
                 'Moip Checkout'
             );
+            // phpcs:ignore
             $checkoutUrl = $response[self::TAG_LINKS][self::TAG_CHECKOUT][self::TAG_PAY_CHECKOUT][self::TAG_REDIRECT_HREF];
             $payment->setAdditionalInformation(
                 self::TAG_INFO_CHECKOUT,
                 $checkoutUrl
             );
+            // phpcs:ignore
             $checkoutCc = $response[self::TAG_LINKS][self::TAG_CHECKOUT][self::TAG_PAY_CC][self::TAG_REDIRECT_HREF];
             $payment->setAdditionalInformation(
                 self::TAG_INFO_CC,
                 $checkoutCc
             );
+            // phpcs:ignore
             $checkoutBoleto = $response[self::TAG_LINKS][self::TAG_CHECKOUT][self::TAG_PAY_BOLETO][self::TAG_REDIRECT_HREF];
             $payment->setAdditionalInformation(
                 self::TAG_INFO_BOLETO,

@@ -108,7 +108,6 @@ class AuthorizeCheckoutCommand implements CommandInterface
      */
     public function execute(array $commandSubject)
     {
-        // $this->createOrderMoip($commandSubject);
         $transferO = $this->transferFactory->create(
             $this->requestBuilder->build($commandSubject)
         );

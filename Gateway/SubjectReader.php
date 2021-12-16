@@ -38,7 +38,7 @@ class SubjectReader
     /**
      * Reads payment from subject.
      *
-     * @param array
+     * @param array $subject
      *
      * @return PaymentDataObjectInterface
      */
@@ -87,7 +87,7 @@ class SubjectReader
     /**
      * Reads response from subject.
      *
-     * @param array
+     * @param array $subject
      *
      * @return array
      */
@@ -97,6 +97,8 @@ class SubjectReader
     }
 
     /**
+     * Get Quote.
+     *
      * @return \Magento\Quote\Model\Quote
      */
     public function getQuote()
@@ -105,6 +107,8 @@ class SubjectReader
     }
 
     /**
+     * Get Order.
+     *
      * @return \Magento\Sales\Model\Order
      */
     public function getOrder()
