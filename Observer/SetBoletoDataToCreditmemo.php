@@ -35,27 +35,27 @@ class SetBoletoDataToCreditmemo implements ObserverInterface
         if ($order->getPayment()->getMethodInstance()->getCode() === ConfigProviderBoleto::CODE) {
             $bankNumber = !empty($input[CreditmemoBlock::BANK_NUMBER]) ? $input[CreditmemoBlock::BANK_NUMBER] : null;
             $creditmemo->setData(CreditmemoBlock::BANK_NUMBER, $bankNumber);
-            // phpcs:ignore
+            // phpcs:ignore Generic.Files.LineLength
             $agencyNumber = !empty($input[CreditmemoBlock::AGENCY_NUMBER]) ? $input[CreditmemoBlock::AGENCY_NUMBER] : null;
             $creditmemo->setData(CreditmemoBlock::AGENCY_NUMBER, $agencyNumber);
-            // phpcs:ignore
+            // phpcs:ignore Generic.Files.LineLength
             $agencyCheckNumber = !empty($input[CreditmemoBlock::AGENCY_CHECK_NUMBER]) ? $input[CreditmemoBlock::AGENCY_CHECK_NUMBER] : null;
             $creditmemo->setData(CreditmemoBlock::AGENCY_CHECK_NUMBER, $agencyCheckNumber);
-            // phpcs:ignore
+            // phpcs:ignore Generic.Files.LineLength
             $accountNumber = !empty($input[CreditmemoBlock::ACCOUNT_NUMBER]) ? $input[CreditmemoBlock::ACCOUNT_NUMBER] : null;
             $creditmemo->setData(CreditmemoBlock::ACCOUNT_NUMBER, $accountNumber);
-            // phpcs:ignore
+            // phpcs:ignore Generic.Files.LineLength
             $accountCheckNumber = !empty($input[CreditmemoBlock::ACCOUNT_CHECK_NUMBER]) ? $input[CreditmemoBlock::ACCOUNT_CHECK_NUMBER] : null;
             $creditmemo->setData(CreditmemoBlock::ACCOUNT_CHECK_NUMBER, $accountCheckNumber);
-            // phpcs:ignore
+            // phpcs:ignore Generic.Files.LineLength
             $holderFullname = !empty($input[CreditmemoBlock::HOLDER_FULLNAME]) ? $input[CreditmemoBlock::HOLDER_FULLNAME] : null;
             $creditmemo->setData(CreditmemoBlock::HOLDER_FULLNAME, $holderFullname);
-            // phpcs:ignore
+            // phpcs:ignore Generic.Files.LineLength
             $holderDocumment = !empty($input[CreditmemoBlock::HOLDER_DOCUMENT_NUMBER]) ? $input[CreditmemoBlock::HOLDER_DOCUMENT_NUMBER] : null;
             $creditmemo->setData(CreditmemoBlock::HOLDER_DOCUMENT_NUMBER, $holderDocumment);
-            // phpcs:ignore
+            // phpcs:ignore Generic.Files.LineLength
             $comment = !empty($input[CreditmemoBlock::CREDITMEMO_COMMENT_TEXT]) ? $input[CreditmemoBlock::CREDITMEMO_COMMENT_TEXT] : null;
-            // phpcs:ignore
+            // phpcs:ignore Generic.Files.LineLength
             $comment = $comment.'\n'.__('Refund Request to Bank %1, Agency Number %2, Agency Check Number %3, Account Number %4, Account Check Number %5, Holder Name %6, Holder Tax Document %7', $bankNumber, $agencyNumber, $agencyCheckNumber, $accountNumber, $accountCheckNumber, $holderFullname, $holderDocumment);
             $creditmemo->setComment($comment);
         }

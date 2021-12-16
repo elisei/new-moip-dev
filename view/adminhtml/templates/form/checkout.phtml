@@ -47,7 +47,7 @@ $ccInstallment = $block->getInfoData('checkout_qty_installments');
                 <span><?= $block->escapeHtml(__('Allows Installment')) ?></span>
             </label>
             <div class="admin__field-control">
-                <?php // phpcs:ignore ?>
+                <?php // phpcs:ignore Generic.Files.LineLength ?>
                 <select id="<?= /* @noEscape */ $block->escapeHtml($code) ?>_enable_installments" name="payment[checkout_enable_installments]"
                         class="admin__control-select required-entry">
                     <option value="0">

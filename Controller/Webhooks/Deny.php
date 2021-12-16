@@ -253,7 +253,7 @@ class Deny extends Action implements Csrf
                         $cancelCode = $moipPayment['cancellationDetails']['code'];
                         $cancelDescription = $moipPayment['cancellationDetails']['description'];
                         $cancelBy = $moipPayment['cancellationDetails']['cancelledBy'];
-                        // phpcs:ignore
+                        // phpcs:ignore Generic.Files.LineLength
                         $cancelDetailsAdmin = __('%1, code %2, by %3', $cancelDescription, $cancelCode, $cancelBy);
                         $cancelDetailsCus = __('%1', $cancelDescription);
                     }

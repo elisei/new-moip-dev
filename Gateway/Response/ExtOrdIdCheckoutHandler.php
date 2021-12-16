@@ -100,19 +100,19 @@ class ExtOrdIdCheckoutHandler implements HandlerInterface
                 self::TAG_METHOD_NAME,
                 'Moip Checkout'
             );
-            // phpcs:ignore
+            // phpcs:ignore Generic.Files.LineLength
             $checkoutUrl = $response[self::TAG_LINKS][self::TAG_CHECKOUT][self::TAG_PAY_CHECKOUT][self::TAG_REDIRECT_HREF];
             $payment->setAdditionalInformation(
                 self::TAG_INFO_CHECKOUT,
                 $checkoutUrl
             );
-            // phpcs:ignore
+            // phpcs:ignore Generic.Files.LineLength
             $checkoutCc = $response[self::TAG_LINKS][self::TAG_CHECKOUT][self::TAG_PAY_CC][self::TAG_REDIRECT_HREF];
             $payment->setAdditionalInformation(
                 self::TAG_INFO_CC,
                 $checkoutCc
             );
-            // phpcs:ignore
+            // phpcs:ignore Generic.Files.LineLength
             $checkoutBoleto = $response[self::TAG_LINKS][self::TAG_CHECKOUT][self::TAG_PAY_BOLETO][self::TAG_REDIRECT_HREF];
             $payment->setAdditionalInformation(
                 self::TAG_INFO_BOLETO,
