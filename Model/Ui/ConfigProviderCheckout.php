@@ -83,7 +83,7 @@ class ConfigProviderCheckout implements ConfigProviderInterface
         return [
             'payment' => [
                 ConfigCheckout::METHOD => [
-                    'isActive'             => $this->config->isActive($storeId),
+                    'isActive'             => false,
                     'title'                => $this->config->getTitle($storeId),
                     'name_capture'         => $this->config->getUseNameCapture($storeId),
                     'tax_document_capture' => $this->config->getUseTaxDocumentCapture($storeId),

@@ -458,7 +458,7 @@
         </arguments>
     </type>
 
-    <virtualType name="Magento2CheckoutFacade" type="Magento\Payment\Model\Method\Adapter">
+    <!-- <virtualType name="Magento2CheckoutFacade" type="Magento\Payment\Model\Method\Adapter">
         <arguments>
             <argument name="code" xsi:type="const">Moip\Magento2\Model\Ui\ConfigProviderCheckout::CODE</argument>
             <argument name="formBlockType" xsi:type="string">Moip\Magento2\Block\FormCheckout</argument>
@@ -466,7 +466,7 @@
             <argument name="valueHandlerPool" xsi:type="object">Magento2ValueHandlerPool</argument>
             <argument name="commandPool" xsi:type="object">Magento2CheckoutCommandPool</argument>
         </arguments>
-    </virtualType>
+    </virtualType> -->
 
     <virtualType name="Magento2CheckoutCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
         <arguments>

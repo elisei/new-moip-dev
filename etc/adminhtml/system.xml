@@ -270,6 +270,11 @@
                         <config_path>payment/moip_magento2_boleto/payment_action</config_path>
                     </field>
                 </group>
+                <!-- 
+                    O Moip Checkout irá enviar um link por email para pagamento diretamente na Moip.
+                    Atualmente a Moip possuí um erro na API, aguardamos a solução para publicação.
+                -->
+                <!--  
                 <group id="moip_magento2_checkout" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Moip - Checkout diretamente no Moip</label>
                     <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
@@ -310,7 +315,8 @@
                         <source_model>Moip\Magento2\Model\Adminhtml\Source\PaymentAction</source_model>
                         <config_path>payment/moip_magento2_checkout/payment_action</config_path>
                     </field>
-                </group>
+                </group> 
+                -->
                 <group id="payment_config" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Payment Config</label>
                     <field id="debug" translate="label" type="select" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
