@@ -14,11 +14,11 @@ namespace Moip\Magento2\Block\Adminhtml\System\Config;
 class PaymentGroup extends \Magento\Config\Block\System\Config\Form\Fieldset
 {
     /**
-     * @param \Magento\Backend\Block\Context $context
+     * @param \Magento\Backend\Block\Context      $context
      * @param \Magento\Backend\Model\Auth\Session $authSession
-     * @param \Magento\Framework\View\Helper\Js $jsHelper
-     * @param array $data
-     * phpcs:disable Generic.CodeAnalysis.UselessOverridingMethod
+     * @param \Magento\Framework\View\Helper\Js   $jsHelper
+     * @param array                               $data
+     *                                                         phpcs:disable Generic.CodeAnalysis.UselessOverridingMethod
      */
     public function __construct(
         \Magento\Backend\Block\Context $context,
@@ -30,9 +30,10 @@ class PaymentGroup extends \Magento\Config\Block\System\Config\Form\Fieldset
     }
 
     /**
-     * Return header comment part of html for fieldset
+     * Return header comment part of html for fieldset.
      *
      * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     *
      * @return string
      */
     protected function _getHeaderCommentHtml($element)
@@ -43,22 +44,23 @@ class PaymentGroup extends \Magento\Config\Block\System\Config\Form\Fieldset
             return parent::_getHeaderCommentHtml($element);
         }
 
-        $html = '<div class="comment">' .
-            $element->getComment() .
-            ' <a target="_blank" href="' .
-            $groupConfig['help_url'] .
-            '">' .
+        $html = '<div class="comment">'.
+            $element->getComment().
+            ' <a target="_blank" href="'.
+            $groupConfig['help_url'].
+            '">'.
             __(
                 'Help'
-            ) . '</a></div>';
+            ).'</a></div>';
 
         return $html;
     }
 
     /**
-     * Return collapse state
+     * Return collapse state.
      *
      * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     *
      * @return bool
      */
     protected function _isCollapseState($element)
