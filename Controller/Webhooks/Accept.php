@@ -185,7 +185,7 @@ class Accept extends Action implements Csrf
                 'webhook_data'       => $response,
             ]);
             $payment = $order->getPayment();
-            if (!$order->getInvoiceCollection()->count()) {
+            if (!$order->getInvoiceCollection()->count() && $order->isPaymentReview()) {
                 try {
                     $isOnline = true;
                     $payment->accept($isOnline);
