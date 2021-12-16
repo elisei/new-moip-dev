@@ -44,6 +44,10 @@ define([
             return true;
         },
 
+        isButtonActive() {
+            return this.isActive();
+        },
+        
         getData() {
             var data = {
                 'method': this.getCode(),

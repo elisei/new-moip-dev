@@ -95,7 +95,7 @@ class All extends AbstractModel
 
         foreach ($preference['preference'] as $webhooks) {
             if (isset($webhooks['id'])) {
-                // phpcs:ignore
+                // phpcs:ignore Generic.Files.LineLength
                 $this->writeln(__('<info>Preference ID: %1 Target Uri: %2</info>', $webhooks['id'], $webhooks['target']));
             }
         }

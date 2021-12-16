@@ -182,7 +182,7 @@ class DetailTotalsDataRequest implements BuilderInterface
             if ($installment > 1) {
                 $typeInstallment = $this->configCc->getTypeInstallment($storeId);
                 if ($interestInfo[$installment] > 0) {
-                    // phpcs:ignore
+                    // phpcs:ignore Generic.Files.LineLength
                     $installmentInterest = $this->getInterestCompound($total, $interestInfo[$installment], $installment);
                     if ($typeInstallment === 'simple') {
                         $installmentInterest = $this->getInterestSimple($total, $interestInfo[$installment]);
@@ -195,7 +195,7 @@ class DetailTotalsDataRequest implements BuilderInterface
                             $this->priceHelper->currency($installmentInterest, true, false)
                         );
                         if (!$interest) {
-                            // phpcs:ignore
+                            // phpcs:ignore Generic.Files.LineLength
                             $orderAdapter->setMoipInterestAmount($installmentInterest)->setBaseMoipInterestAmount($installmentInterest);
                         }
 
@@ -213,7 +213,7 @@ class DetailTotalsDataRequest implements BuilderInterface
                         $this->priceHelper->currency($discountInterest, true, false)
                     );
                     if (!$interest) {
-                        // phpcs:ignore
+                        // phpcs:ignore Generic.Files.LineLength
                         $orderAdapter->setMoipInterestAmount($discountInterest)->setBaseMoipInterestAmount($discountInterest);
                     }
 

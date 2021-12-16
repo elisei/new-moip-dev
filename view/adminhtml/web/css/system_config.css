@@ -2,6 +2,13 @@
  * Copyright Moip. All rights reserved.
  * See COPYING.txt for license details.
 */
+.section-config .section-config .entry-edit-head>a {
+  display: flex;
+}
+.moip-payment-byline p {
+  font-weight: normal;
+  font-size: 14px;
+}
 .complex.moip-payment-section .heading strong {
   display: flex;
   flex-direction: row;
