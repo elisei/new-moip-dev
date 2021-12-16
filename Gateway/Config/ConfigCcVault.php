@@ -9,8 +9,6 @@
 namespace Moip\Magento2\Gateway\Config;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
-use Magento\Framework\Exception\InputException;
-use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Payment\Gateway\Config\Config as PaymentConfig;
 use Magento\Store\Model\ScopeInterface;
 
@@ -39,7 +37,7 @@ class ConfigCcVault extends PaymentConfig
     }
 
     /**
-     * Get If Use Cvv
+     * Get If Use Cvv.
      *
      * @param int|null $storeId
      *

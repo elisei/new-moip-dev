@@ -26,11 +26,11 @@ class MassUpdate extends \Magento\Sales\Controller\Adminhtml\Order\AbstractMassA
     protected $orderManagement;
 
     /**
-     * @param Context                   $context
-     * @param Filter                    $filter
-     * @param CollectionFactory         $collectionFactory
-     * @param OrderManagementInterface  $orderManagement
-     * @param Order                     $order
+     * @param Context                  $context
+     * @param Filter                   $filter
+     * @param CollectionFactory        $collectionFactory
+     * @param OrderManagementInterface $orderManagement
+     * @param Order                    $order
      */
     public function __construct(
         Context $context,
@@ -46,7 +46,7 @@ class MassUpdate extends \Magento\Sales\Controller\Adminhtml\Order\AbstractMassA
     }
 
     /**
-     * Mass Action
+     * Mass Action.
      *
      * @param AbstractCollection $collection
      *

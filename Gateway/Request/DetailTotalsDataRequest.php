@@ -198,6 +198,7 @@ class DetailTotalsDataRequest implements BuilderInterface
                             // phpcs:ignore
                             $orderAdapter->setMoipInterestAmount($installmentInterest)->setBaseMoipInterestAmount($installmentInterest);
                         }
+
                         return $installmentInterest;
                     }
                 }
@@ -215,6 +216,7 @@ class DetailTotalsDataRequest implements BuilderInterface
                         // phpcs:ignore
                         $orderAdapter->setMoipInterestAmount($discountInterest)->setBaseMoipInterestAmount($discountInterest);
                     }
+
                     return $discountInterest;
                 }
             }

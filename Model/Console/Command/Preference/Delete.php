@@ -78,13 +78,13 @@ class Delete extends AbstractModel
         $this->httpClientFactory = $httpClientFactory;
     }
 
-   /**
-    * Command Delete
-    *
-    * @param array $ids
-    *
-    * @return void
-    */
+    /**
+     * Command Delete.
+     *
+     * @param array $ids
+     *
+     * @return void
+     */
     public function delete($ids = [])
     {
         $this->writeln('Delete Preference');
@@ -103,7 +103,7 @@ class Delete extends AbstractModel
     }
 
     /**
-     * Delete Preference Webhooks
+     * Delete Preference Webhooks.
      *
      * @param string $id
      *

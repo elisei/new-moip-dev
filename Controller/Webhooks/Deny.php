@@ -173,6 +173,7 @@ class Deny extends Action implements Csrf
 
             if (!$order->getId()) {
                 $resultPage->setHttpResponseCode(406);
+
                 return $resultPage->setJsonData(
                     $this->json->serialize([
                         'error'   => 400,
@@ -189,11 +190,10 @@ class Deny extends Action implements Csrf
             ]);
 
             if ($order->isPaymentReview()) {
-
                 $processed = $this->processUpdate($order, $data);
                 if (!$processed['success']) {
-
                     $resultPage->setHttpResponseCode(500);
+
                     return $resultPage->setJsonData(
                         $this->json->serialize([
                             'error'   => 500,
@@ -203,6 +203,7 @@ class Deny extends Action implements Csrf
                 }
 
                 $resultPage->setHttpResponseCode(200);
+
                 return $resultPage->setJsonData(
                     $this->json->serialize([
                         'success'   => 1,
@@ -213,6 +214,7 @@ class Deny extends Action implements Csrf
             }
 
             $resultPage->setHttpResponseCode(201);
+
             return $resultPage->setJsonData(
                 $this->json->serialize([
                     'error'   => 400,
@@ -238,6 +240,7 @@ class Deny extends Action implements Csrf
     {
         $processed = [];
         $payment = $order->getPayment();
+
         try {
             $isOnline = true;
             $payment->deny($isOnline);
@@ -268,7 +271,7 @@ class Deny extends Action implements Csrf
 
             $this->orderCommentSender->send($order, 1, $cancelDetailsCus);
             $processed = [
-                'success' => true
+                'success' => true,
             ];
         } catch (\Exception $exc) {
             $processed = [
@@ -276,6 +279,7 @@ class Deny extends Action implements Csrf
                 'message' => $exc->getMessage(),
             ];
         }
+
         return $processed;
     }
 }

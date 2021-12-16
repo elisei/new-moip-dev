@@ -67,7 +67,7 @@ class VaultDetailsHandler implements HandlerInterface
     }
 
     /**
-     * Handle
+     * Handle.
      *
      * @param array $handlingSubject
      * @param array $response

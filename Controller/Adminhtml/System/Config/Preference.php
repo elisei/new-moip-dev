@@ -108,11 +108,11 @@ class Preference extends \Magento\Backend\App\Action
         $this->json = $json;
         parent::__construct($context);
     }
-    
+
     /**
      * ACL - Is Allowed.
      *
-     * @return boolean
+     * @return bool
      */
     protected function _isAllowed()
     {
@@ -366,7 +366,7 @@ class Preference extends \Magento\Backend\App\Action
     }
 
     /**
-     * Set Webhooks
+     * Set Webhooks.
      *
      * @param string $webhook
      *

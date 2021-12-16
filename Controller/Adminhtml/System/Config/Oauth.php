@@ -121,7 +121,7 @@ class Oauth extends \Magento\Backend\App\Action
     /**
      * ACL - Check is Allowed.
      *
-     * @return boolean
+     * @return bool
      */
     protected function _isAllowed()
     {

@@ -92,7 +92,7 @@ class Logout extends \Magento\Backend\App\Action
     /**
      * ACL - Check is Allowed.
      *
-     * @return boolean
+     * @return bool
      */
     protected function _isAllowed()
     {
@@ -120,7 +120,7 @@ class Logout extends \Magento\Backend\App\Action
     }
 
     /**
-     * Set Clear oAuth
+     * Set Clear oAuth.
      *
      * @return void
      */
@@ -142,7 +142,7 @@ class Logout extends \Magento\Backend\App\Action
     }
 
     /**
-     * Set Clear Mpa
+     * Set Clear Mpa.
      *
      * @return void
      */

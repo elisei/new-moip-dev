@@ -16,7 +16,7 @@ use Magento\Payment\Model\Method\AbstractMethod;
 class PaymentAction implements \Magento\Framework\Option\ArrayInterface
 {
     /**
-     * To Options Array
+     * To Options Array.
      *
      * @return array
      */

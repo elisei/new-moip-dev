@@ -47,11 +47,11 @@ class FormCheckout extends \Magento\Payment\Block\Form
     private $priceHelper;
 
     /**
-     * @param Context $context
-     * @param Quote $session
-     * @param ConfigCc $configCc
+     * @param Context        $context
+     * @param Quote          $session
+     * @param ConfigCc       $configCc
      * @param ConfigCheckout $configCheckout
-     * @param PriceHelper $priceHelper
+     * @param PriceHelper    $priceHelper
      */
     public function __construct(
         Context $context,

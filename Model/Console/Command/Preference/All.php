@@ -79,7 +79,7 @@ class All extends AbstractModel
     }
 
     /**
-     * Command All
+     * Command All.
      *
      * @return void
      */

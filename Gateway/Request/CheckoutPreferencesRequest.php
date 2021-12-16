@@ -193,7 +193,7 @@ class CheckoutPreferencesRequest implements BuilderInterface
      *
      * @param float $total
      * @param float $interest
-     * @param int $portion
+     * @param int   $portion
      *
      * @return float
      */

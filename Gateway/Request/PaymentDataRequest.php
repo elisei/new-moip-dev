@@ -365,8 +365,8 @@ class PaymentDataRequest implements BuilderInterface
     /**
      * Value For Field Address.
      *
-     * @param string  $param_telefone
-     * @param boolean $return_ddd
+     * @param string $param_telefone
+     * @param bool   $return_ddd
      *
      * @return string
      */
