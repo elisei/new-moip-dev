@@ -5,7 +5,7 @@
  */
 
 // phpcs:disable Magento2.Templates.ThisInTemplate
-
+// phpcs:ignore Generic.Files.LineLength
 /* @var \Magento\Sales\Block\Adminhtml\Order\Creditmemo\Create\Form $block */
 ?>
 <form id="edit_form" method="post" action="<?= $block->escapeUrl($block->getSaveUrl()) ?>">
@@ -52,7 +52,7 @@
                 <div class="shipping-description-title"><?= $block->escapeHtml($_order->getShippingDescription()) ?></div>
                 <div class="shipping-description-content">
                     <?= $block->escapeHtml(__('Total Shipping Charges')) ?>:
-                    <?php // phpcs:ignore Generic.Files.LineLength ?>
+                    <?php // phpcs:ignore ?>
                     <?php if ($this->helper(\Magento\Tax\Helper\Data::class)->displaySalesPriceInclTax($block->getSource()->getStoreId())): ?>
                         <?php $_excl = $block->displayShippingPriceInclTax($_order); ?>
                     <?php else: ?>
@@ -61,7 +61,7 @@
                     <?php $_incl = $block->displayShippingPriceInclTax($_order); ?>
 
                     <?= /* @noEscape */ $_excl ?>
-                    <?php // phpcs:ignore Generic.Files.LineLength ?>
+                    <?php // phpcs:ignore  ?>
                     <?php if ($this->helper(\Magento\Tax\Helper\Data::class)->displaySalesBothPrices($block->getSource()->getStoreId()) && $_incl != $_excl): ?>
                         (<?= $block->escapeHtml(__('Incl. Tax')) ?> <?= /* @noEscape */ $_incl ?>)
                     <?php endif; ?>
