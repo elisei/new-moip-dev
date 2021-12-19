@@ -24,7 +24,7 @@ define(
                     component: "Moip_Magento2/js/view/payment/method-renderer/moip_magento2_boleto"
                 }
             );
-        } 
+        }
 
         if (config[ccType].isActive) {
             rendererList.push(

@@ -19,7 +19,7 @@ define(
                 active: false
             },
             totals: quote.getTotals(),
-            
+
             initObservable() {
                 this._super().observe(["active"]);
                 return this;
@@ -34,7 +34,7 @@ define(
                     priceInterest;
                 if (this.totals() && totals.getSegment("moip_interest_amount")) {
                     priceInterest = totals.getSegment("moip_interest_amount").value
-                    if(priceInterest !== 0.000) {
+                    if (priceInterest !== 0.000) {
                         return priceInterest;
                     }
                 }
@@ -42,7 +42,7 @@ define(
             },
 
             customTitle() {
-                if(this.getPureValue() > 0) {
+                if (this.getPureValue() > 0) {
                     return $t("Installment Interest");
                 }
                 return $t("Discount Cash");

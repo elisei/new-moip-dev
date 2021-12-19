@@ -24,8 +24,8 @@ define([
                 return;
             }
 
-            if(window.checkoutConfig.payment["moip_magento2_cc"].isActive){
-                if(window.checkoutConfig.payment["moip_magento2_cc"].info_interest[1] < 0){
+            if (window.checkoutConfig.payment["moip_magento2_cc"].isActive) {
+                if (window.checkoutConfig.payment["moip_magento2_cc"].info_interest[1] < 0) {
                     totalsMoipInterest.save(0);
                 }
             }

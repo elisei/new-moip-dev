@@ -14,57 +14,57 @@ define(
         'Magento_Customer/js/model/customer',
     ],
     function ($, quote, urlBuilder, errorProcessor, urlFormatter, getTotalsAction, customer) {
-    "use strict";
-    return {
-        /**
-         * Save Moip Interest by Installment
-         *
-         * @param installment
-         */
-        save(installment) {
-            var serviceUrl,
-                payload,
-                quoteId = quote.getQuoteId();
-            if (!customer.isLoggedIn()) {
-                serviceUrl = urlBuilder.createUrl('/guest-carts/:cartId/set-installment-for-moip-interest', {
-                    cartId: quoteId
-                });
-                payload = {
-                    cartId: quoteId,
-                    installment: {
-                        installment_for_interest: installment
-                    }
-                };
-            } else {
-                serviceUrl = urlBuilder.createUrl('/carts/mine/set-installment-for-moip-interest', {});
-                payload = {
-                    cartId: quoteId,
-                    installment: {
-                        installment_for_interest: installment
-                    }
-                };
-            }
+        "use strict";
+        return {
+            /**
+             * Save Moip Interest by Installment
+             *
+             * @param installment
+             */
+            save(installment) {
+                var serviceUrl,
+                    payload,
+                    quoteId = quote.getQuoteId();
+                if (!customer.isLoggedIn()) {
+                    serviceUrl = urlBuilder.createUrl('/guest-carts/:cartId/set-installment-for-moip-interest', {
+                        cartId: quoteId
+                    });
+                    payload = {
+                        cartId: quoteId,
+                        installment: {
+                            installment_for_interest: installment
+                        }
+                    };
+                } else {
+                    serviceUrl = urlBuilder.createUrl('/carts/mine/set-installment-for-moip-interest', {});
+                    payload = {
+                        cartId: quoteId,
+                        installment: {
+                            installment_for_interest: installment
+                        }
+                    };
+                }
 
-            var result = true;
-            $.ajax({
-                url: urlFormatter.build(serviceUrl),
-                data: JSON.stringify(payload),
-                global: false,
-                contentType: "application/json",
-                type: "PUT",
-                async: false
-            }).done(
-                function (response) {
-                    var deferred = $.Deferred();
-                    getTotalsAction([], deferred); 
-                }
-            ).fail(
-                function (response) {
-                    result = false;
-                    errorProcessor.process(response);
-                }
-            );
-            return result;
-        }
-    };
-});
+                var result = true;
+                $.ajax({
+                    url: urlFormatter.build(serviceUrl),
+                    data: JSON.stringify(payload),
+                    global: false,
+                    contentType: "application/json",
+                    type: "PUT",
+                    async: false
+                }).done(
+                    function (response) {
+                        var deferred = $.Deferred();
+                        getTotalsAction([], deferred);
+                    }
+                ).fail(
+                    function (response) {
+                        result = false;
+                        errorProcessor.process(response);
+                    }
+                );
+                return result;
+            }
+        };
+    });

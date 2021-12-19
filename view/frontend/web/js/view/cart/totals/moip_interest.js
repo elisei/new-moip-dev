@@ -10,7 +10,7 @@ define(
     ],
     function (Component) {
         "use strict";
-        
+
         return Component.extend({
             /**
              * @override
