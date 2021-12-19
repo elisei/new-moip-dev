@@ -6,7 +6,7 @@
  */
 -->
 <!-- ko if: TaxDocumentCapture() || BirthDateCapture()  || PhoneCapture-->
-<fieldset data-bind="attr: {class: 'fieldset payment items ccard ' + getCode(), id: 'payment_form_cc_persona' + getCode()}">
+<fieldset data-bind="attr: {class: 'fieldset payment items cc-persona ' + getCode(), id: 'payment_form_cc_persona' + getCode()}">
       <!-- ko if: TaxDocumentCapture() -->
       <div class="field moip-input-group holder tax-document required">
         <div class="control">
@@ -78,7 +78,7 @@
     </div>
 </fieldset>
 <!-- /ko -->
-<fieldset data-bind="attr: {class: 'fieldset payment items ccard field-to-pay' + getCode(), id: 'payment_form_cc_' + getCode()}">
+<fieldset data-bind="attr: {class: 'fieldset payment items ccard payment-moip field-to-pay' + getCode(), id: 'payment_form_cc_' + getCode()}">
     <!-- ko if: (isShowLegend())-->
     <legend class="legend">
         <span class="legend-title"><!-- ko i18n: 'Credit Card Information'--><!-- /ko --></span>
